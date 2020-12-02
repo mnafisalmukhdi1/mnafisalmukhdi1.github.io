@@ -1,3 +1,4 @@
+<!DOCTYPE html/php>
 <html>
   <head>
     <meta http-equiv="refresh" content="0;http://www.wapblog.id/timeline/<?php $_GET['user'] ?>/" />
