@@ -88,7 +88,12 @@
       </div>
     </div>
     <footer>
-      <script>var today = new Date();var date = today.getFullYear();</script>
+      &#169; <span id="year"></span>
     </footer>
+    <script>
+      var today = new Date();
+      var date = today.getFullYear();
+      document.getElementById("year").innerhtml = date;
+    </script>
   </body>
 </html>
