@@ -8,6 +8,7 @@
     <title>@mnafisalmukhdi1</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 	  <style>
 		  .icon{width:30px;height:30px}
 		  .image{width:150px;height:150px;margin:5px}
@@ -83,14 +84,10 @@
 		<a href="https://t.me/mnafisalmukhdi1" target="_blank" class="w3-button w3-border w3-blue w3-round w3-block">Telegram</a>
 		<a href="https://line.me/ti/p/mnafisalmukhdi1" target="_blank" class="w3-button w3-border w3-green w3-round w3-block">LINE</a>
 	</section>
-	<section>	
-      <h4 id="donate">Donasi</h4>
-		<a href="https://karyakarsa.com/mnafisalmukhdi1/tip" target="_blank" class="w3-button w3-border w3-red w3-round w3-block">KaryaKarsa.com</a>
-		<a href="https://saweria.co/mnafisalmukhdi1" target="_blank" class="w3-button w3-border w3-white w3-round w3-block">Saweria.co</a>
-		<a href="https://trakteer.id/mnafisalmukhdi1/tip" target="_blank" class="w3-button w3-border w3-red w3-round w3-block">Trakteer.id</a>
-		<a href="https://paypal.me/mnafisalmukhdi" target="_blank" class="w3-button w3-border w3-blue-gray w3-round w3-block">PayPal.me</a>
-		<a href="https://streamlabs.com/mnafisal-mukhdi/tip" target="_blank" class="w3-button w3-border w3-teal w3-round w3-block">StreamLabs</a>
-	</section>
+	<div id="donate-section"></div>
     </main>
+	  <script>
+		  $( "#donate-section" ).load( "/1link/donate.html #donate" );
+	  </script>
   </body>
 </html>
