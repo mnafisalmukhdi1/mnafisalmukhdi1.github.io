@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:url" content="https://mnafisalmukhdi1.github.io/1link/">
+		<meta property="og:title" content="M. Nafis Al-Mukhdi">
+		<meta property="og:description" content="@mnafisalmukhdi1">
+		<meta property="og:image" content="https://mnafisalmukhdi1.github.io/logo.png">
+		<title>Voucher | M. Nafis Al-Mukhdi</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="all">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="https://mnafisalmukhdi1.github.io/favicon.ico">
+		<link rel="shortcut icon" href="https://mnafisalmukhdi1.github.io/favicon.ico">
+		</head>
+	<body>
+	<header class="container p m">
+		<h1 class="heading center">Voucher</h1>
+		<h2 class="subheading center">Selamat! Anda berhak untuk mendapatkan <i>Voucher</i> dari <a href="/">M. Nafis Al-Mukhdi</a></h2>
+	</header>
+	<main class="container center">
+		<div style="display:inline-block">
+			<input type="text" class="input grey" value="Nafis10K" id="voucher" style="width:80%" disabled>
+			<button class="btn grey" id="button" style="float:right"><i class="material-icons">content_copy</span></i>
+		</div>
+		<p>Voucher ini mengurangi biaya pembelian sebanyak <b>Rp. 10.000,-</b>. Terserah kepada Anda apakah membagikannya atau menyimpan sendiri.<br>Hanya bisa digunakan di <a href="https://karyakarsa.com/mnafisalmukhdi1" target="_blank">Karyakarsa</a>. Baca cara penggunaannya di <a href="https://help.karyakarsa.com/petunjuk-penggunaan-karyakarsa-untuk-penikmat-karya" target="_blank">sini</a>.</p>
+	</main>
+	<script type="text/javascript">
+	var copyText = document.getElementById('voucher').value;
+	document.getElementById('button').addEventListener('click', copyClipboard);
+	function copyClipboard(){
+	navigator.clipboard.writeText(copyText).then(function(){
+	alert('Berhasil disalin ke papan klip');
+	}, function(){
+	alert('Gagal disalin ke papan klip');
+	});
+	}
+	</script>
+	</body>
+</html>
