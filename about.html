@@ -10,122 +10,119 @@
 		<meta name="description" content="Mahasiswa di STAI RAKHA Amuntai, Penulis di Wattpad">
 		<title>M. Nafis Al-Mukhdi</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="all">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-		<style>.icon{width:16px;height:16px;}</style>
+		<style>.icon{width:16px;height:16px;}.img-me{max-width:10rem;max-height:10rem;text-align:center;vertical-align:middle;background:white;padding:2px;}</style>
 	</head>
-	<body class="grey lighten-2">
-	<header class="row p-3 red" style="max-width:101%">
-		<div class="col-4 text-center">
-			<img src="https://mnafisalmukhdi1.github.io/cdn/mnam.jpg" alt="M. Nafis Al-Mukhdi" class="img-thumbnail" style="max-width:10rem;max-height:10rem;">
+	<body class="bg-neutral-200 max-w-fit">
+	<header class="grid grid-cols-4 p-3 bg-red-500 max-w-full">
+		<div class="col text-center">
+			<img src="https://mnafisalmukhdi1.github.io/cdn/mnam.jpg" alt="M. Nafis Al-Mukhdi" class="img-me text-center shadow-bg">
 		</div>
-		<div class="col">
-			<h1>M. Nafis Al-Mukhdi</h1>
-			<p>M. Nafis Al-Mukhdi adalah seorang laki-laki yang lahir pada hari Senin, 8 April 2002 bertepatan dengan 25 al-Muharram 1423 H dan tinggal di Kabupaten Hulu Sungai Utara, Provinsi Kalimantan Selatan, Indonesia.</p>
+		<div class="col-span-3">
+			<h1 class="text-3xl font-bold">M. Nafis Al-Mukhdi</h1>
+			<p class="p-1">M. Nafis Al-Mukhdi adalah seorang laki-laki yang lahir pada hari Senin, 8 April 2002 bertepatan dengan 25 al-Muharram 1423 H dan tinggal di Kabupaten Hulu Sungai Utara, Provinsi Kalimantan Selatan, Indonesia.</p>
 		</div>
 	</header>
-	<main class="container d-grid">
-		<div class="row">
-			<div class="col col-md-6 col-lg-4 white rounded p-3 m-1">
-				<section>
-					<h2>Profil</h2>
-					<table class="table table-borderless">
-						<tr scope="row">
-							<td><span class="material-icons">male</span></td>
-							<td>Laki-laki</td>
-						</tr>
-						<tr scope="row">
-							<td><span class="material-icons">cake</span></td>
-							<td>8 April 2002 / 25 al-Muharram 1423</td>
-						</tr>
-						<tr scope="row">
-							<td><span class="material-icons">place</span></td>
-							<td>Hulu Sungai Utara, Kalimantan Selatan, Indonesia</td>
-						</tr>
-						<tr scope="row">
-							<td><span class="material-icons">email</span></td>
-							<td><a href="mailto:mnafisalmukhdi1@yahoo.com" class="black-text">mnafisalmukhdi1@yahoo.com</a></td>
-						</tr>
-						<tr scope="row">
-							<td><span class="material-icons">public</span></td>
-							<td><a href="http://nafis1.my.id" class="black-text">nafis1.my.id</a></td>
-						</tr>
-					</table>
-				</section>
-				<section>
-					<h2>Kemampuan</h2>
-					<table class="table table-borderless">
-						<tr scope="row">
-							<td><span class="material-icons">language</span></td>
-							<td class="text-start">Banjar, Indonesia, Inggris</td>
-						</tr>
-						<tr scope="row">
-							<td><span class="material-icons">web</span></td>
-							<td class="text-start">HTML5, CSS, MediaWiki</td>
-						</tr>
-						<tr scope="row">
-							<td><span class="material-icons">laptop</span></td>
-							<td class="text-start">Microsoft Word, Microsoft Powerpoint</td>
-						</tr>
-					</table>
-				</section>
-				<section>
-					<h2>Ketertarikan</h2>
-					<div class="card-group">
-						<div class="card text-center p-3">
-							<i class="card-img-top material-icons">create</i>
-							<div class="card-text">Menulis</div>
-						</div>
-						<div class="card text-center p-3">
-							<i class="card-img-top material-icons">music_note</i>
-							<div class="card-text">Musik</div>
-						</div>
-						<div class="card text-center p-3">
-							<i class="card-img-top material-icons">translate</i>
-							<div class="card-text">Bahasa</div>
-						</div>
+	<main class="grid grid-cols-10 space-x-4">
+		<div class="col-span-3 bg-white p-5 my-2 ml-4 rounded">
+			<section>
+				<h2 class="text-2xl font-bold p-1">Profil</h2>
+				<table class="p-2">
+					<tr scope="row" class="my-1">
+						<td><span class="material-icons">male</span></td>
+						<td>Laki-laki</td>
+					</tr>
+					<tr scope="row" class="my-1">
+						<td><span class="material-icons">cake</span></td>
+						<td>8 April 2002 / 25 al-Muharram 1423</td>
+					</tr>
+					<tr scope="row" class="my-1">
+						<td><span class="material-icons">place</span></td>
+						<td>Hulu Sungai Utara, Kalimantan Selatan, Indonesia</td>
+					</tr>
+					<tr scope="row" class="my-1">
+						<td><span class="material-icons">email</span></td>
+						<td><a href="mailto:mnafisalmukhdi1@yahoo.com" class="underline">mnafisalmukhdi1@yahoo.com</a></td>
+					</tr>
+					<tr scope="row" class="my-1">
+						<td><span class="material-icons">public</span></td>
+						<td><a href="http://nafis1.my.id" class="underline">nafis1.my.id</a></td>
+					</tr>
+				</table>
+			</section>
+			<section>
+				<h2 class="text-2xl font-bold p-1">Kemampuan</h2>
+				<table class="p-2">
+					<tr scope="row" class="my-1">
+						<td><span class="material-icons">language</span></td>
+						<td class="text-start">Banjar, Indonesia, Inggris</td>
+					</tr>
+					<tr scope="row" class="my-1">
+						<td><span class="material-icons">web</span></td>
+						<td class="text-start">HTML5, CSS, MediaWiki</td>
+					</tr>
+					<tr scope="row" class="my-1">
+						<td><span class="material-icons">laptop</span></td>
+						<td class="text-start">Microsoft Word, Microsoft Powerpoint</td>
+					</tr>
+				</table>
+			</section>
+			<section>
+				<h2 class="text-2xl font-bold p-1">Ketertarikan</h2>
+				<div class="grid grid-cols-3 p-2">
+					<div class="col text-center p-3">
+						<i class="material-icons">create</i>
+						<div>Menulis</div>
 					</div>
-				</section>
-			</div>
-			<div class="col white rounded p-3 m-1">
+					<div class="col text-center p-3">
+						<i class="material-icons">music_note</i>
+						<div>Musik</div>
+					</div>
+					<div class="col text-center p-3">
+						<i class="material-icons">translate</i>
+						<div>Bahasa</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="col-span-7 bg-white p-5 my-2 mr-4 rounded">
 				<section>
-					<h2>Pendidikan</h2>
-					<table class="table table-borderless">
-						<tr scope="row">
+					<h2 class="text-2xl font-bold p-1">Pendidikan</h2>
+					<table class="w-full">
+						<tr scope="row" class="my-2">
 							<td>RA Nurul Huda</td>
-							<td class="text-end grey-text">2007-2008</td>
+							<td class="text-right text-gray-500">2007-2008</td>
 						</tr>
-						<tr scope="row">
+						<tr scope="row" class="my-2">
 							<td>MIN 24 Hulu Sungai Utara</td>
-							<td class="text-end grey-text">2008-2014</td>
+							<td class="text-right text-gray-500">2008-2014</td>
 						</tr>
-						<tr scope="row">
+						<tr scope="row" class="my-2">
 							<td>MTs Nurul Huda</td>
-							<td class="text-end grey-text">2014-2017</td>
+							<td class="text-right text-gray-500">2014-2017</td>
 						</tr>
-						<tr scope="row">
+						<tr scope="row" class="my-2">
 							<td>MAN 1 Hulu Sungai Utara</td>
-							<td class="text-end grey-text">2017-2020</td>
+							<td class="text-right text-gray-500">2017-2020</td>
 						</tr>
-						<tr scope="row">
+						<tr scope="row" class="my-2">
 							<td>STAI Rasyidiyah Khalidiyah</td>
-							<td class="text-end grey-text">2020-sekarang</td>
+							<td class="text-right text-gray-500">2020-sekarang</td>
 						</tr>
 					</table>
 				</section>
 				<section>
-					<h2>Pencapaian</h2>
-					<table class="table table-borderless">
-						<tr>
-							<td style="vertical-align:top"><img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat1.jpg" style="width:200px;height:100px" alt="Kontributor Terbaik"></td>
-							<td><h4>Kontribur Terbaik</h4><p>Menjadi "Kontributor Terbaik" dalam event menulis cerpen dengan tema "Harapan" yang diselenggarakan oleh <a href="http://pustakatunggal.blogspot.com/">Penerbit Pustaka Tunggal</a> pada 27 November-27 Desember 2019. Terpilih menjadi salah satu yang masuk antologi <a href="https://shopee.co.id/Lampion-Masa-Depan-i.13906891.3916017648">Lampion Masa Depan</a> bersama 36 orang lainnya dari total peserta 73 orang.</p></td>
+					<h2 class="text-2xl font-bold p-1">Pencapaian</h2>
+					<table class="w-full">
+						<tr class="space-x-0">
+							<td class="w-1/3 align-top p-1"><img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat1.jpg" style="width:200px;height:100px" alt="Kontributor Terbaik"></td>
+							<td class="w-2/3 p-1"><h4 class="text-xl font-bold">Kontribur Terbaik</h4><p>Menjadi "Kontributor Terbaik" dalam event menulis cerpen dengan tema "Harapan" yang diselenggarakan oleh <a href="http://pustakatunggal.blogspot.com/" class="text-blue-500 underline" target="_blank">Penerbit Pustaka Tunggal</a> pada 27 November-27 Desember 2019. Terpilih menjadi salah satu yang masuk antologi <a href="https://shopee.co.id/Lampion-Masa-Depan-i.13906891.3916017648" class="text-blue-500 underline" target="_blank">Lampion Masa Depan</a> bersama 36 orang lainnya dari total peserta 73 orang.</p></td>
 						</tr>
-						<tr>
-							<td style="vertical-align:top"><img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat2.jpg" style="width:200px;height:100px" alt="Penuilis Terpilih"></td>
-							<td><h4>Penulis Terpilih</h4><p>Menjadi "Penulis Terpilih" dalam Buku Antologi Cerpen berjudul "<a href="https://www.instagram.com/p/CM8mVy3MJqW/">Laknat Dendam Kesumat</a>" pada Kontes Menulis Cerpen & Puisi Nasional bersama <a href="https://ebizpublisher.blogspot.com/">Penerbit Ebiz</a> yang diadakan pada 1-31 Desember 2020. Saya menjadi salah satu dari tiga belas penulis yang ada pada buku tersebut, dan salah satu dari 702/1989 orang yang mengikuti.</p></td>
+						<tr class="space-x-0">
+							<td class="w-1/3 align-top p-1"><img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat2.jpg" style="width:200px;height:100px" alt="Penuilis Terpilih"></td>
+							<td class="w-2/3 p-1"><h4 class="text-xl font-bold">Penulis Terpilih</h4><p>Menjadi "Penulis Terpilih" dalam Buku Antologi Cerpen berjudul "<a href="https://www.instagram.com/p/CM8mVy3MJqW/" class="text-blue-500 underline" target="_blank">Laknat Dendam Kesumat</a>" pada Kontes Menulis Cerpen & Puisi Nasional bersama <a href="https://ebizpublisher.blogspot.com/" class="text-blue-500 underline" target="_blank">Penerbit Ebiz</a> yang diadakan pada 1-31 Desember 2020. Saya menjadi salah satu dari tiga belas penulis yang ada pada buku tersebut, dan salah satu dari 702/1989 orang yang mengikuti.</p></td>
 						</tr>
 					</table>
 				</section>
