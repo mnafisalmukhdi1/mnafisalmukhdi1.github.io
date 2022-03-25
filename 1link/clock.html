@@ -1,6 +1,7 @@
 <html>
 <head>
 <script type="text/javascript">
+  // Clock Script
   var tick;
   function stop() {
   clearTimeout(tick);
@@ -20,6 +21,14 @@
   document.title=time;
   tick=setTimeout("clock()",1000); 
   }
+  // Custom Coloring
+  const queryString = window.location.search;
+  console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  const color = urlParams.get('color')
+  document.getElementById("clock").style.color = console.log(color);
+  const background = urlParams.get('background')
+  document.getElementById("clock").style.backgroundColor = console.log(backgroud);
 </script>
 </head>
 <body onload="clock();" onunload="stop();"> 
