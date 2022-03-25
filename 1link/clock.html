@@ -26,9 +26,9 @@
   console.log(queryString);
   const urlParams = new URLSearchParams(queryString);
   const color = urlParams.get('color')
-  document.getElementById("clock").style.color = console.log(color);
+  document.getElementById("clock").style.color = "console.log(color)";
   const background = urlParams.get('background')
-  document.getElementById("clock").style.backgroundColor = console.log(backgroud);
+  document.getElementById("clock").style.backgroundColor = "console.log(background)";
 </script>
 </head>
 <body onload="clock();" onunload="stop();"> 
