@@ -3,34 +3,30 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://cdn.tailwindcss.com"></script>
-		<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 		<title>Portofolio | M. Nafis Al-Mukhdi</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" media="all">
 		<link rel="icon" href="https://mnafisalmukhdi1.github.io/favicon.ico">
 		<link rel="shortcut icon" href="https://mnafisalmukhdi1.github.io/favicon.ico">
-	<body class="bg-gray-300">
-		<header class="bg-slate-400 border-slate-500 grid grid-cols-3">
-			<div class="col-span-1 align-middle">
-			<span class="material-icons text-xs">arrow_back</span> <a href="/" class="align-middle">Home</a>
-			</div>
-			<div class="col-span-1 row-span-1 text-center">
-			<h1 class="text-2xl"><a href="/about.html" target="_blank">M. Nafis Al-Mukhdi</a></h1>
-			<h2 class="text-xl">Halaman Portofolio</h2>
-			</div>
-			<div class="col-span-1 row-span-2">&nbsp;</div>
+	<body class="bg-slate-300" x-data="{activeTab:1}">
+		<header class="mt-20">
+			<h1 class="text-3xl text-center my-auto">M. Nafis Al-Mukhdi</h1>
+			<h2 class="text-center">@mnafisalmukhdi1</h2>
+			<h3 class="text-lg text-center">Halaman Portofolio</h3>
 		</header>
-		<main class="block" x-data="{ activeTab:1 }">
-		<ul class="flex justify-center space-x-2 text-white">
-                <li>
-                    <a href="#" x-on:click="activeTab = 1" class="inline-block px-4 py-2 bg-sky-500">Waralaba Misteri</a>
-                </li>
-                <li> 
-                    <a href="#" x-on:click="activeTab = 2" class="inline-block px-4 py-2 bg-purple-500">Lainnya</a> 
-                </li>
-                <li> 
-                    <a href="#" x-on:click="activeTab = 3" class="inline-block px-4 py-2 bg-indigo-500">Antologi</a> 
-                </li>
-            </ul>
+		<nav id="nav1" class="text-center my-1">
+			<a href="https://nafis1.my.id"><span class="material-icons">home</span></a>
+			<a href="https://nafis1.my.id/about.html"><span class="material-icons">person</span></a>
+			<a href="https://pddikti.kemdikbud.go.id/data_mahasiswa/RDlFM0I5QjgtMjA3Ri00NDcxLUFGREEtMjkwMTYwNTcyRjJD" target="_blank"><span class="material-icons">school</span></a>
+			<a href="https://blog.nafis1.my.id"><span class="material-icons">rss_feed</span></a>
+			<a href="https://nafis1.my.id/works/index.html"><span class="material-icons">book</span></a>
+			<a href="https://nafis1.my.id/donate.html"><span class="material-icons">attach_money</span></a>
+		</nav>
+		<nav id="nav2" class="text-center mb-4">
+			<a href="#" x-on:click="activeTab = 1" class="underline">Waralaba Misteri</a> &middot;
+			<a href="#" x-on:click="activeTab = 2" class="underline">Antologi</a> &middot;
+			<a href="#" x-on:click="activeTab = 3" class="underline">Lainnya</a>
+		</nav>
+		<main class="block">
 		<section class="relative flex" x-show="activeTab === 1">
 			<!--Detektif Sekolahan-->
 			<a href="#" class="mx-auto w-40 flex flex-col bg-white shadow-xl" onclick="document.getElementById('detektif-sekolahan').style.display='block'">
@@ -72,27 +68,27 @@
 		</section>
 		<section class="relative flex" x-show="activeTab === 3">
 			<!--Lampion Masa Depan-->
-			<a href="https://shopee.co.id/Lampion-Masa-Depan-i.13906891.3916017648" class="mx-auto w-40 flex flex-col bg-white shadow-xl" target="_blank">
+			<a href="#" class="mx-auto w-40 flex flex-col bg-white shadow-xl" onclick="document.getElementById('lmd').style.display='block'">
 			<img class="w-40" src="https://mnafisalmukhdi1.github.io/cdn/ant/lmd.png" alt="Lampion Masa Depan">
 			<h3 class="text-lg text-center">Lampion Masa Depan</h3>
 			</a>
 			<!--Muhasabah Diri-->
-			<a href="https://www.guepedia.com/Store/lihat_buku/MTIwNjQ=" class="mx-auto w-40 flex flex-col bg-white shadow-xl" target="_blank">
+			<a href="#" class="mx-auto w-40 flex flex-col bg-white shadow-xl" onclick="document.getElementById('muhasabah-diri').style.display='block'">
 			<img class="w-40" src="https://mnafisalmukhdi1.github.io/cdn/ant/md.png" alt="Muhasabah Diri">
 			<h3 class="text-lg text-center">Muhasabah Diri</h3>
 			</a>
 			<!--Semangat Berkarya-->
-			<a href="https://www.guepedia.com/Store/lihat_buku/MTIyMDQ=" class="mx-auto w-40 flex flex-col bg-white shadow-xl" target="_blank">
+			<a href="#" class="mx-auto w-40 flex flex-col bg-white shadow-xl" onclick="document.getElementById('semangat-berkarya').style.display='block'">
 			<img class="w-40" src="https://mnafisalmukhdi1.github.io/cdn/ant/sb.png" alt="Semangat Berkarya">
 			<h3 class="text-lg text-center">Semangat Berkarya</h3>
 			</a>
 			<!--Metafora Kehilangan-->
-			<a href="https://www.instagram.com/p/B7xMTm6AgO7/" class="mx-auto w-40 flex flex-col bg-white shadow-xl" target="_blank">
+			<a href="#" class="mx-auto w-40 flex flex-col bg-white shadow-xl" onclick="document.getElementById('metafora-kehilangan').style.display='block'">
 			<img class="w-40" src="https://mnafisalmukhdi1.github.io/cdn/ant/mk.png" alt="Metafora Kehilangan">
 			<h3 class="text-lg text-center">Metafora Kehilangan</h3>
 			</a>
 			<!--Laknat Dendam Kesumat-->
-			<a href="https://www.instagram.com/p/CM8mVy3MJqW/" class="mx-auto w-40 flex flex-col bg-white shadow-xl" target="_blank">
+			<a href="#" class="mx-auto w-40 flex flex-col bg-white shadow-xl" onclick="document.getElementById('ldk').style.display='block'">
 			<img class="w-40" src="https://mnafisalmukhdi1.github.io/cdn/ant/ldk.png" alt="Laknat Dendam Kesumat">
 			<h3 class="text-lg text-center">Laknat Dendam Kesumat</h3>
 			</a>
@@ -105,7 +101,7 @@
 			<div class="border border-blue-500 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
 			<div class="py-4 text-left px-6">
 			<a href="#" class="float-right" onclick="document.getElementById('detektif-sekolahan').style.display='none'">&times;</a>
-			<iframe src="https://nafis1.my.id/works/detektif-sekolahan.html" class="w-full h-fit"></iframe>
+			<iframe src="https://nafis1.my.id/works/detektif-sekolahan.html" class="w-full h-full"></iframe>
 			</div>
 			</div>
 			</div>
@@ -114,7 +110,7 @@
 			<div class="border border-gray-500 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
 			<div class="py-4 text-left px-6">
 			<a href="#" class="float-right" onclick="document.getElementById('86-the-drama').style.display='none'">&times;</a>
-			<iframe src="https://nafis1.my.id/works/86-the-drama.html" class="w-full h-fit"></iframe>
+			<iframe src="https://nafis1.my.id/works/86-the-drama.html" class="w-full h-full"></iframe>
 			</div>
 			</div>
 			</div>
@@ -123,7 +119,7 @@
 			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
 			<div class="py-4 text-left px-6">
 			<a href="#" class="float-right" onclick="document.getElementById('6tt').style.display='none'">&times;</a>
-			<iframe src="https://nafis1.my.id/works/enam-tanda-tanya.html" class="w-full h-fit"></iframe>
+			<iframe src="https://nafis1.my.id/works/enam-tanda-tanya.html" class="w-full h-full"></iframe>
 			</div>
 			</div>
 			</div>
@@ -132,7 +128,7 @@
 			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
 			<div class="py-4 text-left px-6">
 			<a href="#" class="float-right" onclick="document.getElementById('if').style.display='none'">&times;</a>
-			<iframe src="https://nafis1.my.id/works/if.html" class="w-full h-fit"></iframe>
+			<iframe src="https://nafis1.my.id/works/if.html" class="w-full h-full"></iframe>
 			</div>
 			</div>
 			</div>
@@ -141,7 +137,7 @@
 			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
 			<div class="py-4 text-left px-6">
 			<a href="#" class="float-right" onclick="document.getElementById('lembayung-senja').style.display='none'">&times;</a>
-			<iframe src="https://nafis1.my.id/works/lembayung-senja.html" class="w-full h-fit"></iframe>
+			<iframe src="https://nafis1.my.id/works/lembayung-senja.html" class="w-full h-full"></iframe>
 			</div>
 			</div>
 			</div>
@@ -150,7 +146,7 @@
 			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
 			<div class="py-4 text-left px-6">
 			<a href="#" class="float-right" onclick="document.getElementById('kesederhanaan-cinta').style.display='none'">&times;</a>
-			<iframe src="https://nafis1.my.id/works/kesederhanaan-cinta.html" class="w-full h-fit"></iframe>
+			<iframe src="https://nafis1.my.id/works/kesederhanaan-cinta.html" class="w-full h-full"></iframe>
 			</div>
 			</div>
 			</div>
@@ -159,10 +155,47 @@
 			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
 			<div class="py-4 text-left px-6">
 			<a href="#" class="float-right" onclick="document.getElementById('pbds').style.display='none'">&times;</a>
-			<iframe src="https://nafis1.my.id/works/pria-bertopeng-dari-surga.html" class="w-full h-fit"></iframe>
+			<iframe src="https://nafis1.my.id/works/pria-bertopeng-dari-surga.html" class="w-full h-full"></iframe>
+			</div>
+			</div>
+			</div>
+			<!--Lampion Masa Depan-->
+			<div id="lmd" class="fixed w-full inset-0 z-50 flex justify-center hidden">
+			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
+			<div class="py-4 text-left px-6">
+			<a href="#" class="float-right" onclick="document.getElementById('lmd').style.display='none'">&times;</a>
+			<iframe src="https://nafis1.my.id/works/lampion-masa-depan.html" class="w-full h-full">Lampion Masa Depan</iframe>
+			</div>
+			</div>
+			</div>
+			<!--Muhasabah Diri-->
+			<div id="muhasabah-diri" class="fixed w-full inset-0 z-50 flex justify-center hidden">
+			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
+			<div class="py-4 text-left px-6">
+			<a href="#" class="float-right" onclick="document.getElementById('muhasabah-diri').style.display='none'">&times;</a>
+			<iframe src="https://nafis1.my.id/works/muhasabah-diri.html" class="w-full h-full"></iframe>
+			</div>
+			</div>
+			</div>
+			<!--Semangat Berkarya-->
+			<div id="semangat-berkarya" class="fixed w-full inset-0 z-50 flex justify-center hidden">
+			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
+			<div class="py-4 text-left px-6">
+			<a href="#" class="float-right" onclick="document.getElementById('semangat-berkarya').style.display='none'">&times;</a>
+			<iframe src="https://nafis1.my.id/works/semangat-berkarya.html" class="w-full h-full"></iframe>
+			</div>
+			</div>
+			</div>
+			<!--Laknat Dendam Kesumat-->
+			<div id="ldk" class="fixed w-full inset-0 z-50 flex justify-center hidden">
+			<div class="border border-gray-300 shadow-lg bg-white w-8/12 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
+			<div class="py-4 text-left px-6">
+			<a href="#" class="float-right" onclick="document.getElementById('ldk').style.display='none'">&times;</a>
+			<iframe src="https://nafis1.my.id/works/laknat-dendam-kesumat.html" class="w-full h-full"></iframe>
 			</div>
 			</div>
 			</div>
 		</main>
+		<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	</body>
 </html>
