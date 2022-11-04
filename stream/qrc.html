@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>QR Code</title>
+<script type="text/javascript>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 10000); // Change image every 10 seconds
+}
+</script>
+</head>
+<body>
+<!--Trakteer-->
+<div class="slide">
+<iframe src="https://widget.trakteer.id/qr-code.html?qr_pattern=dots&creator=mnafisalmukhdi1">
+</iframe>
+</div>
+<!--KaryaKarsa-->
+<div class="slide">
+<iframe src="https://karyakarsa.com/overlay/qr?streamKey=a3cb8813336176e8b1ae5e8ce4d0bc1197683ca2&creator=mnafisalmukhdi1&url=/support&size=big">
+</iframe>
+</div>
+<div class="slide">
+<iframe src="https://saweria.co/widgets/qr?streamKey=192e0ffb06b3f926851cd3b8c17a3648">
+</iframe>
+</div>
+<!--Streamlabs-->
+<div class="slide">
+<img src="https://images2.imgbox.com/f4/1d/LYVVmtp3_o.png" alt="https://streamlabs.com/mnafisal-mukhdi/tip" title="https://streamlabs.com/mnafisal-mukhdi/tip">
+</div>
+<!--KoFi-->
+<div class="slide">
+<img src="https://images2.imgbox.com/d0/a6/Qgv43yPR_o.png" alt="https://ko-fi.com/mnafisalmukhdi1" title="https://ko-fi.com/mnafisalmukhdi1">
+</div>
+</body>
+</html>
