@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<body>
+<div class="container mx-auto my-auto text-center">
+    <h1 class="text-4xl">301</h1>
+  
+    <p><strong>301 Moved Permanently.</strong></p>
+    <p>The document has moved <a href="{{page.link}}">here</a></p>
+  </div>
+  <script>
+    // Redirect to a different URL after a specified delay (in milliseconds)
+    setTimeout(function() {
+      window.location.href = '{{page.link}}';
+    }, 5000); // 5 seconds delay
+  </script>
+</body>

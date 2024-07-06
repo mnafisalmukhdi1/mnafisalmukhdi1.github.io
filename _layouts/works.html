@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<body class="bg-slate-300">
+    <header class="mt-20">
+        <h1 class="text-3xl text-center my-auto">{{page.title}}</h1>
+        <h2 class="text-lg text-center">M. Nafis Al-Mukhdi</h2>
+    </header>
+    <main class="mx-10">
+        <figure class="flex aspect-square justify-center my-5 lg:mx-0">
+        <img src="{{page.img}}" alt="{{page.title}}" class="align-center lg:w-500px lg:h-500px">
+        </figure>
+        <div class="bg-white opacity-50 my-5 p-5">
+        {{page.description}}
+        </div>
+        {{content}}
+    </main>
+</body>
+<style type="text/css">
+    .border{width:100%;text-align:center;border-bottom:1px solid #000;line-height:0.1em;margin:10px 0 20px;}
+    .border span{padding:0 10px}
+    </style>
