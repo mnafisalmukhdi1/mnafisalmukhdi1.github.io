@@ -4,7 +4,7 @@ layout: default
 <body class="bg-slate-300">
     <header class="mt-20">
         <h1 class="text-3xl text-center my-auto">{{page.title}}</h1>
-        <h2 class="text-lg text-center">M. Nafis Al-Mukhdi</h2>
+        <h2 class="text-lg text-center">{% if page_author and page_author != "" %}{{ page_author }}{% else %}M. Nafis Al-Mukhdi{% endif %}</h2>
     </header>
     <main class="mx-10">
         <figure class="flex aspect-square justify-center my-5 lg:mx-0">
