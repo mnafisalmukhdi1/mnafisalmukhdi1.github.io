@@ -1,0 +1,13 @@
+title: "M. Nafis Al-Mukhdi"
+description: "Website portofolio dan dokumentasi"
+baseurl: "" # kosong kalau langsung di domain utama
+url: "https://nafis1.my.id"
+collections:
+  works:
+    output: true
+    permalink: /works/:title/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+

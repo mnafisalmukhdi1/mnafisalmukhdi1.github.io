@@ -9,42 +9,52 @@ title: {{ page.title }}
     <h1 class="text-3xl font-bold text-teal-900 dark:text-teal-300 mb-2">{{ page.title }}</h1>
     <h2 class="text-lg text-teal-800 dark:text-teal-400 mb-1">{{ page.author }}</h2>
     <p class="italic mb-2">"{{ page.tagline }}"</p>
+    {% if page.type %}
+    <p class="text-sm font-semibold mb-2 text-teal-700 dark:text-teal-300">{{ page.type | capitalize }}</p>
+    {% endif %}
+    {% if page.genre %}
     <p class="text-sm mb-4">Genre: {{ page.genre }}</p>
+    {% endif %}
     <p>{{ page.synopsis }}</p>
   </div>
 </section>
 
 <section class="max-w-4xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-2 gap-6">
   <div>
-    <h3 class="text-lg font-semibold text-teal-900 dark:text-teal-300 mb-2">Format</h3>
+    <h3 class="text-lg font-semibold text-teal-900 dark:text-teal-300 mb-2">Detail</h3>
     <ul class="text-sm space-y-1">
-      <li>Ukuran: {{ page.size }}</li>
-      <li>ISBN: {{ page.isbn }}</li>
-      <li>Penerbit: {{ page.publisher }}</li>
-      <li>Terbit: {{ page.release }}</li>
+      {% if page.size %}<li>Ukuran: {{ page.size }}</li>{% endif %}
+      {% if page.isbn %}<li>ISBN: {{ page.isbn }}</li>{% endif %}
+      {% if page.publisher %}<li>Penerbit: {{ page.publisher }}</li>{% endif %}
+      {% if page.release %}<li>Terbit: {{ page.release }}</li>{% endif %}
     </ul>
   </div>
   <div>
     <h3 class="text-lg font-semibold text-teal-900 dark:text-teal-300 mb-2">Harga</h3>
     <ul class="text-sm space-y-1">
-      <li>Fisik: {{ page.price_physical }}</li>
-      <li>Ebook: {{ page.price_ebook }}</li>
+      {% if page.price_physical %}<li>Fisik: {{ page.price_physical }}</li>{% endif %}
+      {% if page.price_ebook %}<li>Ebook: {{ page.price_ebook }}</li>{% endif %}
+      {% if page.price %}<li>{{ page.price }}</li>{% endif %}
     </ul>
   </div>
 </section>
 
-<section class="text-center py-6 space-x-4">
-  <a href="{{ page.wattpad }}" class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold">Baca di Wattpad</a>
-  <a href="{{ page.shopee }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Beli di Shopee</a>
-  <a href="{{ page.googleplay }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Unduh di Google Play</a>
+<section class="text-center py-6 space-x-4 flex flex-wrap justify-center gap-4">
+  {% if page.wattpad %}<a href="{{ page.wattpad }}" class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold">Baca di Wattpad</a>{% endif %}
+  {% if page.shopee %}<a href="{{ page.shopee }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Beli di Shopee</a>{% endif %}
+  {% if page.googleplay %}<a href="{{ page.googleplay }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Unduh di Google Play</a>{% endif %}
+  {% if page.external_link %}<a href="{{ page.external_link }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">{{ page.external_link_text }}</a>{% endif %}
 </section>
 
+{% if page.quote %}
 <section class="max-w-3xl mx-auto px-4 py-8 text-center">
   <blockquote class="italic text-lg text-teal-800 dark:text-teal-400">
-    “{{ page.quote }}”
+    "{{ page.quote }}"
   </blockquote>
 </section>
+{% endif %}
 
+{% if page.related %}
 <section class="max-w-4xl mx-auto px-4 py-6">
   <h3 class="text-xl font-bold text-teal-900 dark:text-teal-300 mb-4">Related Works</h3>
   <ul class="list-disc list-inside space-y-2">
@@ -53,3 +63,4 @@ title: {{ page.title }}
     {% endfor %}
   </ul>
 </section>
+{% endif %}
