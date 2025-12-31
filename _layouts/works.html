@@ -15,7 +15,7 @@ title: "Portofolio"
 {% assign works_sorted = site.works | sort: "title" %}
 {% capture genres_str %}{% endcapture %}
 {% for work in works_sorted %}
-  {% if work.genre %}
+  {% if work.genre and work.genre != "" %}
     {% unless genres_str contains work.genre %}
       {% assign genres_str = genres_str | append: work.genre | append: "|" %}
     {% endunless %}
@@ -43,7 +43,18 @@ title: "Portofolio"
       <h2 id="{{ genre | slugify }}" class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">{{ genre }}</h2>
       <div class="flex flex-wrap gap-6 mb-12">
         {% for work in works_sorted %}
-          {% if work.genre == genre %}
+          {% assign has_genre = false %}
+          {% if work.genre and work.genre != "" %}
+            {% if work.genre == genre %}
+              {% assign has_genre = true %}
+            {% endif %}
+          {% else %}
+            {% if genre == "Uncategorized" %}
+              {% assign has_genre = true %}
+            {% endif %}
+          {% endif %}
+
+          {% if has_genre %}
           <!-- Work Card -->
           <div class="w-64 bg-white dark:bg-slate-900 shadow-md rounded overflow-hidden">
             <a href="{{ work.url }}">
