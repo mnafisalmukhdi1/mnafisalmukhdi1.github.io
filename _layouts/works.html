@@ -1,22 +1,21 @@
 ---
 layout: default
+title: Portofolio
 ---
-<body class="bg-slate-300">
-    <header class="mt-20">
-        <h1 class="text-3xl text-center my-auto">{{page.title}}</h1>
-        <h2 class="text-lg text-center">{% if page.author %}{{ page.author }}{% else %}M. Nafis Al-Mukhdi{% endif %}</h2>
-    </header>
-    <main class="mx-10">
-        <figure class="flex aspect-square justify-center my-5 lg:mx-0">
-        <img src="{{page.img}}" alt="{{page.title}}" class="align-center lg:w-500px lg:h-500px">
-        </figure>
-        <div class="bg-white opacity-50 my-5 p-5">
-        {{page.description}}
-        </div>
-        {{content}}
-    </main>
-</body>
-<style type="text/css">
-    .border{width:100%;text-align:center;border-bottom:1px solid #000;line-height:0.1em;margin:10px 0 20px;}
-    .border span{padding:0 10px}
-    </style>
+
+<header class="text-center py-8">
+  <h1 class="text-3xl font-bold text-teal-900 dark:text-teal-300">Portofolio</h1>
+</header>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4 py-6">
+  {% for work in site.works %}
+  <div class="bg-white dark:bg-slate-800 shadow-md rounded overflow-hidden">
+    <img src="{{ work.cover }}" alt="{{ work.title }}" class="w-full aspect-[512/800] object-cover" />
+    <div class="p-4">
+      <h2 class="text-xl font-bold mb-2">{{ work.title }}</h2>
+      <p class="text-sm mb-4">{{ work.description }}</p>
+      <a href="{{ work.url }}" class="inline-block bg-teal-900 text-white px-4 py-2 rounded text-sm">Read More</a>
+    </div>
+  </div>
+  {% endfor %}
+</section>
