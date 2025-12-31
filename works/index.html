@@ -2,12 +2,16 @@
 layout: default
 title: "Portofolio"
 ---
+
 {% include header.html %}
-<header class="text-center py-8">
-  <h1 class="text-3xl font-bold text-teal-900 dark:text-teal-300">Portofolio</h1>
+
+<!-- Hero Header -->
+<header class="bg-teal-900 dark:bg-slate-900 text-white py-6 text-center">
+  <h1 class="text-3xl font-bold">Portofolio</h1>
+  <p class="text-lg mt-2">Karya tulis bahkan musik</p>
 </header>
 
-{% comment %} Build list of unique genres (comma-separated in front matter) {% endcomment %}
+<!-- Build list of unique genres -->
 {% capture genres_str %}{% endcapture %}
 {% assign works_sorted = site.works | sort: "title" %}
 {% for work in works_sorted %}
@@ -27,11 +31,21 @@ title: "Portofolio"
 {% endfor %}
 {% assign genres = genres_str | split: "|" %}
 
-{% for genre in genres %}
-  {% if genre != "" %}
-    <h3 class="text-lg block ml-2">{{ genre }}</h3>
-    <section>
-      <div class="relative flex flex-wrap p-3 gap-8">
+<!-- Category Menu -->
+<nav class="bg-white shadow-sm py-4 flex flex-wrap justify-center gap-6 text-teal-900 font-semibold uppercase">
+  {% for genre in genres %}
+    {% if genre != "" %}
+      <a href="#{{ genre | slugify }}" class="hover:text-teal-600">{{ genre }}</a>
+    {% endif %}
+  {% endfor %}
+</nav>
+
+<!-- Portfolio Grid by Genre -->
+<main class="max-w-6xl mx-auto px-4 py-8">
+  {% for genre in genres %}
+    {% if genre != "" %}
+      <h2 id="{{ genre | slugify }}" class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">{{ genre }}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {% for work in works_sorted %}
           {% assign has_genre = false %}
           {% if work.genre %}
@@ -48,15 +62,24 @@ title: "Portofolio"
           {% endif %}
 
           {% if has_genre %}
-          <div class="max-w-lg shrink-0 snap-center">
+          <!-- Work Card -->
+          <div class="bg-white shadow-md rounded overflow-hidden">
             <a href="{{ work.url }}">
-              <img class="aspect-[9/14] w-40 shrink-0 rounded-lg bg-white object-cover shadow-xl" src="{{ work.cover | default: '/assets/images/placeholder.png' }}" alt="{{ work.title }}" />
-              <div class="block truncate w-40">{{ work.title }}</div>
+              <img src="{{ work.cover | default: '/assets/images/placeholder.png' }}"
+                   alt="{{ work.title }}"
+                   class="w-full aspect-[512/800] object-cover"/>
+              <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">{{ work.title }}</h3>
+                {% if work.description %}
+                  <p class="text-sm mb-4">{{ work.description }}</p>
+                {% endif %}
+                <span class="inline-block bg-teal-900 text-white px-4 py-2 rounded text-sm">Read More</span>
+              </div>
             </a>
           </div>
           {% endif %}
         {% endfor %}
       </div>
-    </section>
-  {% endif %}
-{% endfor %}
+    {% endif %}
+  {% endfor %}
+</main>
