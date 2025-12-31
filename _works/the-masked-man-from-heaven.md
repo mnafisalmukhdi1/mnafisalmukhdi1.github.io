@@ -1,0 +1,19 @@
+---
+layout: work
+title: "The Masked Man From Heaven"
+cover: "https://nafis1.my.id/cdn/works/1x1/tmfh.jpg"
+release: "30 October 2022"
+price_ebook: "$0.8"
+googleplay: "https://play.google.com/store/books/details?id=GXiXEAAAQBAJ"
+synopsis: "The Masked Man From Heaven relates the narrative of the water and fire nation..."
+---
+
+<a href="https://story.nafis1.my.id/the-masked-man-from-heaven/" target="blank_" class="block w-full bg-white hover:bg-gray-100 mb-4 pt-4 pb-4 rounded-lg text-center">story.nafis1.my.id</a>
+<a href="https://www.webnovel.com/book/22670622605681405" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-500 mb-4 pt-4 pb-4 rounded-lg text-center">WebNovel</a>
+<h3 class="border"><span class="bg-slate-300">Electronic Book</span></h3>
+<div class="bg-white opacity-50 my-5 p-5">
+Released: October 30, 2022<br>Price: $0,8 (excluding taxes)
+</div>
+<a href="https://play.google.com/store/books/details?id=GXiXEAAAQBAJ" target="_blank" class="block w-full bg-sky-400 hover:bg-sky-300 mb-4 pt-4 pb-4 rounded-lg text-center">Google Play Books</a>
+<a href="https://ko-fi.com/s/32d7490aa0" target="_blank" class="block w-full bg-pink-500 hover:bg-pink-400 mb-4 pt-4 pb-4 rounded-lg text-center">Ko-Fi</a>
+<a href="https://lynk.id/mnafisalmukhdi1/n1l94m5emw45" target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-500 mb-4 pt-4 pb-4 rounded-lg text-white">Lynk</a>

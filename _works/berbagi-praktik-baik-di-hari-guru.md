@@ -1,0 +1,14 @@
+---
+layout: work
+title: "Berbagi Praktik Baik di Hari Guru"
+author: "Guru SMPIT Ihsanul Amal"
+cover: "https://nafis1.my.id/cdn/ant/bpbdhg-1x1.jpg"
+release: "27 November 2024"
+synopsis: "Di momen spesial Hari Guru Nasional 2024, guru-guru SMPIT Ihsanul Amal berbagi praktik baik yang dishare melalui sosial media masing-masing."
+---
+
+<div class="bg-white opacity-50 my-5 p-5">
+Rilis: 27 November 2024
+</div>
+<a href="https://web.facebook.com/smpit.alabio/posts/pfbid0SGegioq4mTQNkpKf2GhJi7bWdrVS7M2PrSRLQQj9Jn5GprwAf6iE54CoRPbjXabKl" target="_blank" class="block w-full bg-blue-500 hover:bg-blue-400 mb-4 pt-4 pb-4 rounded-lg text-white text-center">Facebook</a>
+<a href="https://www.instagram.com/p/DC3QQUlpZ9I/?img_index=1" target="_blank" class="block w-full bg-pink-500 hover:bg-pink-400 mb-4 pt-4 pb-4 rounded-lg text-white text-center">Instagram</a>
