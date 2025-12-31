@@ -5,7 +5,7 @@ author: "Guru SMPIT Ihsanul Amal"
 cover: "https://nafis1.my.id/cdn/ant/bpbdhg.png"
 release: "27 November 2024"
 synopsis: "Di momen spesial Hari Guru Nasional 2024, guru-guru SMPIT Ihsanul Amal berbagi praktik baik yang dishare melalui sosial media masing-masing."
-category: "Nonfiksi"
+genre: "Antologi"
 external_links:
 - url: "https://web.facebook.com/smpit.alabio/posts/pfbid0SGegioq4mTQNkpKf2GhJi7bWdrVS7M2PrSRLQQj9Jn5GprwAf6iE54CoRPbjXabKl"
   text: "Facebook"

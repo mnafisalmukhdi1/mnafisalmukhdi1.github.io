@@ -40,19 +40,13 @@ title: {{ page.title }}
 </section>
 
 <section class="text-center py-6 space-x-4 flex flex-wrap justify-center gap-4">
+  {% if page.story_link %}<a href="{{ page.story_link }}" target="_blank" class="block w-full bg-white hover:bg-gray-100 mb-4 pt-4 pb-4 rounded-lg text-center">Baca di story.nafis1.my.id</a>
+  {%- endif -%}
   {% if page.wattpad %}<a href="{{ page.wattpad }}" class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold">Baca di Wattpad</a>{% endif %}
   {% if page.shopee %}<a href="{{ page.shopee }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Beli di Shopee</a>{% endif %}
   {% if page.googleplay %}<a href="{{ page.googleplay }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Unduh di Google Play</a>{% endif %}
-  {% if page.external_links %}
-  <div class="space-y-2">
-    {% for link in page.external_links %}
-      <a href="{{ link.url }}" target="_blank" class="{{ link.class }}">
-        {{ link.text }}
-      </a>
-    {% endfor %}
+  {% if page.external_links %}{% for link in page.external_links %}<a href="{{ link.url }}" target="_blank" class="{{ link.class }} px-6 py-2 rounded-full text-sm font-semibold">{{ link.text }}</a>{% endfor %}
   </div>
-{% endif %}
-
 </section>
 
 {% if page.quote %}
