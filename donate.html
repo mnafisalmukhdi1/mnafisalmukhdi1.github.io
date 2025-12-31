@@ -15,13 +15,13 @@ title: Donasi
 			}
 		}
 	</script>
-	<div x-data="initTabs()" class="w-full mx-auto px-4">
-		<div class="flex gap-2 mb-6 overflow-x-auto">
+	<div x-data="initTabs()" class="w-full">
+		<div class="flex gap-2 mb-8 border-b border-gray-300">
 			<template x-for="tab in tabs" :key="tab.id">
 				<button
 					@click="activeTab = tab.id"
-					:class="activeTab === tab.id ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'"
-					class="px-4 py-2 rounded-lg whitespace-nowrap transition"
+					:class="activeTab === tab.id ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600 hover:text-gray-800'"
+					class="px-4 py-3 font-medium transition whitespace-nowrap"
 					x-text="tab.name">
 				</button>
 			</template>
