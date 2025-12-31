@@ -40,12 +40,12 @@ title: "Portofolio"
   {% endfor %}
 </nav>
 
-<!-- Portfolio List by Genre -->
-<main class="max-w-4xl mx-auto px-4 py-8">
+<!-- Portfolio Flexible Cards -->
+<main class="max-w-6xl mx-auto px-4 py-8">
   {% for genre in genres %}
     {% if genre != "" %}
       <h2 id="{{ genre | slugify }}" class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">{{ genre }}</h2>
-      <div class="space-y-6 mb-12">
+      <div class="flex flex-wrap gap-6 mb-12">
         {% for work in works_sorted %}
           {% assign has_genre = false %}
           {% if work.genre %}
@@ -62,18 +62,18 @@ title: "Portofolio"
           {% endif %}
 
           {% if has_genre %}
-          <!-- Work Card (stacked) -->
-          <div class="bg-white dark:bg-slate-900 shadow-md rounded overflow-hidden">
+          <!-- Work Card -->
+          <div class="w-64 bg-white dark:bg-slate-900 shadow-md rounded overflow-hidden">
             <a href="{{ work.url }}">
               <img src="{{ work.cover | default: '/assets/images/placeholder.png' }}"
                    alt="{{ work.title }}"
-                   class="w-full max-w-md mx-auto object-cover rounded-t"/>
+                   class="w-full h-80 object-cover"/>
               <div class="p-4">
-                <h3 class="text-xl font-bold mb-2 text-teal-900 dark:text-teal-300">{{ work.title }}</h3>
+                <h3 class="text-lg font-bold mb-2 text-teal-900 dark:text-teal-300">{{ work.title }}</h3>
                 {% if work.description %}
                   <p class="text-sm mb-4 text-gray-700 dark:text-gray-300">{{ work.description }}</p>
                 {% endif %}
-                <span class="inline-block bg-teal-900 dark:bg-teal-700 text-white px-4 py-2 rounded text-sm">Read More</span>
+                <span class="inline-block bg-teal-900 dark:bg-teal-700 text-white px-4 py-2 rounded text-sm">Lihat Selengkapnya</span>
               </div>
             </a>
           </div>
