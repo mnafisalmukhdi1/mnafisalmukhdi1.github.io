@@ -3,11 +3,11 @@ layout: work
 title: "Detektif Sekolahan"
 author: "M. Nafis Al-Mukhdi"
 tagline: "Diary yang berubah jadi misteri"
-genre: "Misteri, Sekolah"
-cover: "/assets/images/detektif-sekolahan.jpg"
+genre: "Misteri-Thriller"
+cover: "https://nafis1.my.id/cdn/works/ds/cover_0.png"
 synopsis: >
-  Idris dan Firdaus menghadapi berbagai kasus di MA Sukamawar, dimulai dari hilangnya diary Idris. 
-  Bisakah mereka mengungkap misteri di antara teman-teman mereka?
+  Idris dan Firdaus menghadapi berbagai kasus di MA Sukamawar dan sekitarnya.
+  Bisakah mereka mengungkap semua misteri?
 size: "14 × 21 cm"
 isbn: "978-623-281-509-4"
 publisher: "GuePedia"

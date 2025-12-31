@@ -43,7 +43,16 @@ title: {{ page.title }}
   {% if page.wattpad %}<a href="{{ page.wattpad }}" class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold">Baca di Wattpad</a>{% endif %}
   {% if page.shopee %}<a href="{{ page.shopee }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Beli di Shopee</a>{% endif %}
   {% if page.googleplay %}<a href="{{ page.googleplay }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Unduh di Google Play</a>{% endif %}
-  {% if page.external_link %}<a href="{{ page.external_link }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">{{ page.external_link_text }}</a>{% endif %}
+  {% if page.external_links %}
+  <div class="space-y-2">
+    {% for link in page.external_links %}
+      <a href="{{ link.url }}" target="_blank" class="{{ link.class }}">
+        {{ link.text }}
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+
 </section>
 
 {% if page.quote %}
