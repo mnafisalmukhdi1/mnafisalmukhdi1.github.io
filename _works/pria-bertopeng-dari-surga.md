@@ -1,7 +1,7 @@
 ---
 layout: work
 title: "Pria Bertopeng Dari Surga"
-cover: "https://nafis1.my.id/cdn/works/1x1/pbds.jpg"
+cover: "https://nafis1.my.id/cdn/works/pbds.jpg"
 genre: "Fantasi"
 release: "31 Juli 2020"
 story_link: "https://story.nafis1.my.id/pria-bertopeng-dari-surga/"

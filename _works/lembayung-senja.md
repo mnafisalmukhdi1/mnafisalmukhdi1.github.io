@@ -1,7 +1,7 @@
 ---
 layout: work
 title: "Lembayung Senja"
-cover: "https://nafis1.my.id/cdn/works/1x1/ls.jpg"
+cover: "https://nafis1.my.id/cdn/works/ls.jpg"
 genre: "Banjar"
 story_link: "https://story.nafis1.my.id/lembayung-senja/"
 wattpad: "https://www.wattpad.com/story/233250803"
