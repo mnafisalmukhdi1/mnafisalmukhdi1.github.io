@@ -1,12 +1,13 @@
 ---
 layout: work
 title: "86: The Drama"
-cover: "https://nafis1.my.id/cdn/works/1x1/86.jpg"
+author: "M. Nafis Al-Mukhdi"
+cover: "https://nafis1.my.id/cdn/works/86-drama.png"
 release: "31 Mei 2021"
 price_ebook: "Rp. 18.000"
 story_link: "https://story.nafis1.my.id/86-the-drama"
 googleplay: "https://play.google.com/store/books/details/M_Nafis_Al_Mukhdi_86?id=AlD2DwAAQBAJ"
-synopsis: "86: The Drama merupakan sempalan (spin-off) dari Detektif Sekolahan dengan tokoh utama kepolisian yang telah disebutkan pada cerita sebelumnya..."
+synopsis: "86: The Drama merupakan sempalan (spin-off) dari Detektif Sekolahan dengan tokoh utama kepolisian yang telah disebutkan pada cerita sebelumnya, yakni Sukamawar, Kebun Melati dan Pasir Putih. Bercerita tentang berbagai perwira dari satuan tugas Kepolisian Resor Kota Sukamawar bekerja sama dengan Kepolisian Resor Kota Kebun Melati dan Kepolisian Resor Kota Pasir Putih dalam menghadapi berbagai kasus kriminal sampai menangkap oknum polisi."
 genre: "Misteri-Thriller"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/86-the-drama"

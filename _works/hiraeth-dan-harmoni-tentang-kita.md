@@ -2,14 +2,16 @@
 layout: work
 title: "Hiraeth dan Harmoni Tentang Kita"
 author: "Alaina Adria, Andaning, dkk."
-cover: "https://nafis1.my.id/cdn/ant/hhtk-1x1.png"
+genre: "Antologi"
+cover: "https://nafis1.my.id/cdn/ant/hhtk.png"
 release: "22 Maret 2024"
 price_physical: "Rp. 75.000"
 synopsis: "Sebuah antologi, hasil dari tantangan Semangat Merangkai Kata Writers di Maret 2024 oleh Geladerikata dan Penerbit Arkais."
+external_links:
+- url: "https://www.instagram.com/p/C4zkJ6oxSb6/?img_index=1"
+  text: "Lihat di Semangka Writers"
+  class: "bg-pink-500 hover:bg-pink-400"
+- url: "https://www.instagram.com/p/C4zpFJBRlNH/?img_index=1"
+  text: "Beli di Penerbit Arkais"
+  class: "bg-pink-500 hover:bg-pink-400"
 ---
-
-<div class="bg-white opacity-50 my-5 p-5">
-Rilis: 22 Maret 2024<br>Harga: Rp. 75.000,00
-</div>
-<a href="https://www.instagram.com/p/C4zkJ6oxSb6/?img_index=1" target="_blank" class="block w-full bg-pink-500 hover:bg-pink-400 mb-4 pt-4 pb-4 rounded-lg text-white text-center">Lihat di Semangka Writers</a>
-<a href="https://www.instagram.com/p/C4zpFJBRlNH/?img_index=1" target="_blank" class="block w-full bg-pink-500 hover:bg-pink-400 mb-4 pt-4 pb-4 rounded-lg text-white text-center">Beli di Penerbit Arkais</a>

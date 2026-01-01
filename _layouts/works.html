@@ -64,7 +64,7 @@ title: "Portofolio"
               <div class="p-4">
                 <h3 class="text-lg font-bold mb-2 text-teal-900 dark:text-teal-300">{{ work.title }}</h3>
                 {% if work.synopsis %}
-                  <p class="text-sm mb-4 text-gray-700 dark:text-gray-300">{{ work.synopsis }}</p>
+                  <p class="text-sm mb-4 text-gray-700 dark:text-gray-300">{{ work.synopsis | truncatewords: 20, '...' }}</p>
                 {% endif %}
                 <span class="inline-block bg-teal-900 dark:bg-teal-700 text-white px-4 py-2 rounded text-sm">Read More</span>
               </div>
