@@ -57,7 +57,7 @@ title: "Portofolio"
           {% if has_genre %}
           <!-- Work Card -->
           <div class="w-64 bg-white dark:bg-slate-900 shadow-md rounded overflow-hidden">
-            <a href="{{ work.url }}">
+            <a href="{{ work.url }}" target="_blank">
               <img src="{{ work.cover | default: '/assets/images/placeholder.png' }}"
                    alt="{{ work.title }}"
                    class="w-full h-80 object-cover"/>
