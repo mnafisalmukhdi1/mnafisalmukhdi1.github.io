@@ -7,7 +7,7 @@ release: "30 September 2022"
 price_ebook: "Rp. 25.000"
 story_link: "ttps://story.nafis1.my.id/hati-yang-terbelah/"
 googleplay: "https://play.google.com/store/books/details?id=aw_LEAAAQBAJ"
-synopsis: "Mira adalah seorang aparat kepolisian yang bekerja di Satuan Reserse Narkoba..."
+synopsis: "Mira adalah seorang aparat kepolisian yang bekerja di Satuan Reserse Narkoba. Karirnya sontak berubah setelah dia menangkap seorang yang tidak bersalah, Amin dalam sebuah kasus yang dia tangani. Dia melakukannya untuk menunjukkan diri di hadapan Rian, rekan kerjanya untuk mendapatkan rasa kagum dan bukan itu yang sepenuhnya dia dapat. Namun karena itu, Amin dapat kembali bertemu dengan Rangga, sahabatnya selama sekolah setelah tidak bertemu sekian lama meski harus terpisah dari keluarganya. Selama di penjara, Amin berusaha membuat Rangga kembali menjadi diri yang dia kenal sebelumnya."
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/ebook-hati-yang-terbelah"
   text: "Karyakarsa"
