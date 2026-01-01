@@ -41,7 +41,7 @@ title: "Portofolio"
   {% for genre in genres %}
     {% if genre != "" %}
       <h2 id="{{ genre | slugify }}" class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">{{ genre }}</h2>
-      <div class="flex flex-wrap gap-6 mb-12">
+      <div class="flex flex-wrap gap-6 mb-12 justify-center md:justify-start">
         {% for work in works_sorted %}
           {% assign has_genre = false %}
           {% if work.genre and work.genre != "" %}
