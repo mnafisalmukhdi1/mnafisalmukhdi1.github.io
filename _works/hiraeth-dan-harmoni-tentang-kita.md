@@ -5,6 +5,7 @@ author: "Alaina Adria, Andaning, dkk."
 genre: "Antologi"
 cover: "https://nafis1.my.id/cdn/ant/hhtk.png"
 release: "22 Maret 2024"
+size: "13 × 19 cm"
 price_physical: "Rp. 75.000"
 synopsis: "Sebuah antologi, hasil dari tantangan Semangat Merangkai Kata Writers di Maret 2024 oleh Geladerikata dan Penerbit Arkais."
 external_links:

@@ -4,6 +4,7 @@ title: "Berbagi Praktik Baik di Hari Guru"
 author: "Guru SMPIT Ihsanul Amal"
 cover: "https://nafis1.my.id/cdn/ant/bpbdhg.png"
 release: "27 November 2024"
+price_physical: "Rp. 50.000"
 synopsis: "Di momen spesial Hari Guru Nasional 2024, guru-guru SMPIT Ihsanul Amal berbagi praktik baik yang dishare melalui sosial media masing-masing."
 genre: "Antologi"
 external_links:
