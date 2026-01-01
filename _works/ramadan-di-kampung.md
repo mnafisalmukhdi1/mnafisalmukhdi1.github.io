@@ -3,6 +3,7 @@ layout: work
 title: "Ramadan di Kampung"
 cover: "https://nafis1.my.id/cdn/works/rdk.png"
 story_link: "https://story.nafis1.my.id/ramadan-di-kampung/"
+genre: "Drama"
 release: "1 Mei 2024"
 price_ebook: "Rp. 7.000"
 googleplay: "https://play.google.com/store/books/details?id=LSwFEQAAQBAJ"

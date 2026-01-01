@@ -3,6 +3,7 @@ layout: work
 title: "The Masked Man From Heaven"
 cover: "https://nafis1.my.id/cdn/works/tmfh.png"
 story_link: "https://story.nafis1.my.id/the-masked-man-from-heaven/"
+genre: "Fantasi"
 release: "30 October 2022"
 price_ebook: "$0.8"
 googleplay: "https://play.google.com/store/books/details?id=GXiXEAAAQBAJ"
