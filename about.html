@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Tentang Saya"
+title: "M. Nafis Al-Mukhdi"
 cover: "https://nafis1.my.id/cdn/mnam-2024.jpg"
 ---
 <header class="bg-teal-900 text-white py-6 text-center">
@@ -11,35 +11,46 @@ cover: "https://nafis1.my.id/cdn/mnam-2024.jpg"
 <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
 
   <!-- Profil -->
-  <section class="text-center">
-    {% if page.cover %}
-      <img src="{{ page.cover }}" alt="{{ page.title }}"
-           class="w-32 h-32 rounded-full mx-auto shadow-md mb-4"/>
-    {% endif %}
-    <p class="text-gray-700 dark:text-gray-300">
-      Lahir 8 April 2002 di Hulu Sungai Utara, Kalimantan Selatan.<br>
-      Email: <a href="mailto:contact@nafis1.my.id" class="text-teal-600 dark:text-teal-400">contact@nafis1.my.id</a>
-    </p>
-  </section>
+<section class="text-center">
+  {% if page.cover %}
+    <img src="{{ page.cover }}" alt="{{ page.title }}"
+         class="mx-auto shadow-md mb-4"
+         style="width:120px; height:160px; object-fit:cover;"/>
+  {% endif %}
+  <p class="text-gray-700 dark:text-gray-300">
+    Lahir 8 April 2002 di Hulu Sungai Utara, Kalimantan Selatan.<br>
+    Email: <a href="mailto:contact@nafis1.my.id" class="text-teal-600 dark:text-teal-400">contact@nafis1.my.id</a>
+  </p>
+</section>
 
-  <!-- Kemampuan -->
-  <section>
-    <h2 class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">Kemampuan</h2>
-    <div class="flex flex-wrap justify-center gap-6">
-      <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
-        <span class="font-semibold">Bahasa</span>
-        <p class="text-sm">Banjar, Indonesia, Inggris</p>
-      </div>
-      <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
-        <span class="font-semibold">Web</span>
-        <p class="text-sm">HTML5, CSS, MediaWiki</p>
-      </div>
-      <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
-        <span class="font-semibold">Office</span>
-        <p class="text-sm">Word, PowerPoint</p>
-      </div>
+<!-- Kemampuan -->
+<section>
+  <h2 class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">Kemampuan</h2>
+  <div class="flex flex-wrap justify-center gap-6">
+
+    <!-- Bahasa -->
+    <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
+      <span class="material-icons text-teal-600 dark:text-teal-400 text-3xl mb-2">translate</span>
+      <span class="font-semibold">Bahasa</span>
+      <p class="text-sm">Banjar, Indonesia, Inggris</p>
     </div>
-  </section>
+
+    <!-- Web -->
+    <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
+      <span class="material-icons text-teal-600 dark:text-teal-400 text-3xl mb-2">code</span>
+      <span class="font-semibold">Web</span>
+      <p class="text-sm">HTML5, CSS, MediaWiki</p>
+    </div>
+
+    <!-- Office -->
+    <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
+      <span class="material-icons text-teal-600 dark:text-teal-400 text-3xl mb-2">description</span>
+      <span class="font-semibold">Office</span>
+      <p class="text-sm">Word, PowerPoint</p>
+    </div>
+
+  </div>
+</section>
 
   <!-- Pendidikan -->
   <section>
