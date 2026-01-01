@@ -8,7 +8,7 @@ title: {{ page.title }}
   <div class="self-start">
     <h1 class="text-3xl font-bold text-teal-900 dark:text-teal-300 mb-2">{{ page.title }}</h1>
     <h2 class="text-lg text-teal-800 dark:text-teal-400 mb-1">{{ page.author }}</h2>
-    <p class="italic mb-2">"{{ page.tagline }}"</p>
+    {%if page.tagline %}<p class="italic mb-2">"{{ page.tagline }}"</p>{% endif %}
     {% if page.type %}
     <p class="text-sm font-semibold mb-2 text-teal-700 dark:text-teal-300">{{ page.type | capitalize }}</p>
     {% endif %}
