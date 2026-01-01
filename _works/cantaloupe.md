@@ -3,6 +3,7 @@ layout: work
 title: "Cantaloupe"
 author: "M. Nafis Al-Mukhdi"
 cover: "https://nafis1.my.id/cdn/works/cantaloupe.png"
+genre: "Fantasi"
 release: "5 Januari 2025"
 qrcbn: "62-4835-8900-500"
 price_ebook: "Rp. 5.000"
