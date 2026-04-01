@@ -160,7 +160,7 @@ title: Beli Buku
                 <div class="flex justify-between items-center bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
                     <div>
                         <p class="font-bold text-teal-900 dark:text-teal-300">${item.title}</p>
-                        <p class="text-xs text-gray-500">Rp ${item.price.toLocaleString()}</p>
+                        <p class="text-xs text-gray-500">${item.price.toLocaleString()}</p>
                     </div>
                     <div class="flex items-center gap-3">
                         <button onclick="updateQty('${item.id}', -1)" class="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-slate-700 rounded-full text-red-600">-</button>
