@@ -1,0 +1,176 @@
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            
+            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1">
+                <div class="h-56 bg-teal-50 dark:bg-slate-700 flex items-center justify-center border-b dark:border-slate-600">
+                    <span class="material-icons text-7xl text-teal-600 dark:text-teal-400 opacity-50">menu_book</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-teal-900 dark:text-teal-300 mb-2">Antologi Senja</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">Kumpulan puisi tentang rindu dan kopi yang mulai mendingin di penghujung hari.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-lg font-black text-teal-700 dark:text-teal-400">Rp 75.000</span>
+                        <button onclick="addToCart(1, 'Antologi Senja', 75000)" class="flex items-center gap-2 bg-teal-800 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition text-sm font-semibold shadow-md">
+                            <span class="material-icons text-sm">add_shopping_cart</span> Beli
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-sm">
+        &copy; 2026 M. Nafis Al-Mukhdi. Built with HTML & Tailwind.
+    </footer>
+
+    <div id="cart-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-[100] flex justify-end">
+        <div class="bg-white dark:bg-slate-900 w-full max-w-md h-full shadow-2xl overflow-y-auto p-6 border-l dark:border-slate-700 animate-slide-in">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold text-teal-900 dark:text-teal-300 flex items-center gap-2">
+                    <span class="material-icons">shopping_bag</span> Keranjang Belanja
+                </h2>
+                <button onclick="toggleCart()" class="material-icons text-gray-400 hover:text-red-500 transition">close</button>
+            </div>
+
+            <div id="cart-items" class="space-y-4 mb-8">
+                <p class="text-center text-gray-400 italic">Belum ada buku terpilih.</p>
+            </div>
+
+            <div id="checkout-section" class="hidden border-t dark:border-slate-700 pt-6">
+                <form id="order-form" class="space-y-4">
+                    <h3 class="font-bold text-lg text-teal-800 dark:text-teal-400">Data Pengiriman</h3>
+                    
+                    <input type="text" id="cust-name" placeholder="Nama Lengkap" class="w-full p-3 bg-gray-50 dark:bg-slate-800 border dark:border-slate-700 rounded-lg outline-none focus:ring-2 focus:ring-teal-500" required>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <select id="contact-method" onchange="updateContactLabel()" class="p-3 bg-gray-50 dark:bg-slate-800 border dark:border-slate-700 rounded-lg text-sm outline-none">
+                            <option value="WhatsApp">WhatsApp</option>
+                            <option value="Email">Email</option>
+                            <option value="Instagram">Instagram</option>
+                        </select>
+                        <input type="text" id="contact-value" placeholder="No. WA" class="p-3 bg-gray-50 dark:bg-slate-800 border dark:border-slate-700 rounded-lg text-sm outline-none focus:ring-2 focus:ring-teal-500" required>
+                    </div>
+
+                    <textarea id="cust-address" placeholder="Alamat Lengkap (Kecamatan & Kota wajib isi)" class="w-full p-3 bg-gray-50 dark:bg-slate-800 border dark:border-slate-700 rounded-lg outline-none focus:ring-2 focus:ring-teal-500" rows="3" required></textarea>
+                    
+                    <div class="bg-teal-50 dark:bg-teal-900/20 p-4 rounded-xl border border-teal-100 dark:border-teal-900/30">
+                        <div class="flex justify-between font-bold text-xl text-teal-900 dark:text-teal-300">
+                            <span>Total Pembayaran:</span>
+                            <span id="cart-total">Rp 0</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-teal-700 hover:bg-teal-600 text-white py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-lg shadow-teal-900/20">
+                        <span class="material-icons text-sm">assignment_turned_in</span> Pesan Sekarang
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function updateContactLabel() {
+            const method = document.getElementById('contact-method').value;
+            const input = document.getElementById('contact-value');
+            input.placeholder = method === 'WhatsApp' ? "No. WA (0812...)" : (method === 'Email' ? "email@anda.com" : "@username");
+        }
+
+        function addToCart(id, title, price) {
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ id, title, price, qty: 1 });
+            }
+            updateCartUI();
+            if(document.getElementById('cart-modal').classList.contains('hidden')) toggleCart();
+        }
+
+        function updateQty(id, delta) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const list = document.getElementById('cart-items');
+            const count = document.getElementById('cart-count');
+            const totalDisplay = document.getElementById('cart-total');
+            const checkoutSec = document.getElementById('checkout-section');
+            
+            list.innerHTML = '';
+            let total = 0;
+            let totalQty = 0;
+
+            cart.forEach(item => {
+                total += item.price * item.qty;
+                totalQty += item.qty;
+                list.innerHTML += `
+                    <div class="flex justify-between items-center bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
+                        <div>
+                            <p class="font-bold text-teal-900 dark:text-teal-300">${item.title}</p>
+                            <p class="text-xs text-gray-500">Rp ${item.price.toLocaleString()}</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button onclick="updateQty(${item.id}, -1)" class="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-slate-700 rounded-full hover:bg-red-200 dark:hover:bg-red-900/30 transition text-red-600">-</button>
+                            <span class="font-bold w-4 text-center">${item.qty}</span>
+                            <button onclick="updateQty(${item.id}, 1)" class="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-slate-700 rounded-full hover:bg-teal-200 dark:hover:bg-teal-900/30 transition text-teal-600">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            count.innerText = totalQty;
+            totalDisplay.innerText = `Rp ${total.toLocaleString()}`;
+            
+            if(cart.length > 0) {
+                checkoutSec.classList.remove('hidden');
+            } else {
+                checkoutSec.classList.add('hidden');
+                list.innerHTML = '<p class="text-center text-gray-400 py-10 italic">Belum ada buku terpilih.</p>';
+            }
+        }
+
+        document.getElementById('order-form').onsubmit = function(e) {
+    e.preventDefault();
+    
+    const inv = 'INV-' + Date.now().toString().slice(-5);
+    const name = document.getElementById('cust-name').value;
+    const method = document.getElementById('contact-method').value;
+    const contact = document.getElementById('contact-value').value;
+    const address = document.getElementById('cust-address').value;
+    const total = document.getElementById('cart-total').innerText;
+
+    let details = cart.map(i => `- ${i.title} (${i.qty} eks)`).join('\n');
+    
+    const message = `*KONFIRMASI PESANAN [${inv}]*\n\nNama: ${name}\nKontak: ${contact} (${method})\nAlamat: ${address}\n\n*PESANAN:*\n${details}\n\n*TOTAL:* ${total}`;
+    
+    const encodedNumber = "NjI4NTI1MDE3OTM4MA=="; 
+    
+    const targetNumber = atob(encodedNumber);
+    const waDirectLink = `https://wa.me/${targetNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(waDirectLink, '_blank');
+};
+    </script>
+
+    <style>
+        @keyframes slide-in {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        .animate-slide-in {
+            animation: slide-in 0.3s ease-out;
+        }
+    </style>
