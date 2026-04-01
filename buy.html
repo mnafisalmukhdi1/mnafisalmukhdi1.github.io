@@ -13,52 +13,76 @@ title: Beli Buku
 <main class="container mx-auto px-4 py-12">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
         
-        {% assign for_sale = site.works | where_exp: "item", "item.price_physical != nil" %}
-        {% for work in for_sale %}
-        
-        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col">
-            
-            <div class="h-72 bg-teal-50 dark:bg-slate-700 flex items-center justify-center border-b dark:border-slate-600 overflow-hidden">
-                <img src="{{ work.cover | default: '/assets/images/placeholder.png' }}" 
-                     alt="{{ work.title }}" 
-                     class="w-full h-full object-cover transition duration-500 hover:scale-110">
-            </div>
-
-            <div class="p-6 flex-grow flex flex-col">
-                <div class="mb-2">
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-2 py-1 rounded">
-                        {{ work.genre }}
-                    </span>
-                </div>
+        {% assign all_works = site.works | sort: "title" %}
+        {% for work in all_works %}
+            {% comment %} 
+               Cek: Harus ada harga (Fisik ATAU Ebook) 
+               DAN Genre-nya BUKAN "Antologi"
+            {% endcomment %}
+            {% if work.price_physical or work.price_ebook %}
+                {% if work.genre != "Antologi" %}
                 
-                <h3 class="text-xl font-bold text-teal-900 dark:text-teal-300 mb-2">{{ work.title }}</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed line-clamp-3">
-                    {{ work.synopsis | default: "Karya literasi pilihan dari M. Nafis Al-Mukhdi." }}
-                </p>
-
-                <div class="mt-auto pt-4 border-t dark:border-slate-700 flex justify-between items-center">
-                    <div>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-tighter">Mulai Dari</p>
-                        <span class="text-lg font-black text-teal-700 dark:text-teal-400">
-                            {{ work.price_physical }}
-                        </span>
-                    </div>
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md border border-gray-100 dark:border-slate-700 overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col">
                     
-                    {% assign clean_price = work.price_physical | replace: 'Rp.', '' | replace: '.', '' | strip %}
-                    <button onclick="addToCart('{{ work.title | slugify }}', '{{ work.title }}', '{{ clean_price }}');" 
-                            class="flex items-center gap-2 bg-teal-800 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition text-sm font-semibold shadow-md">
-                        <span class="material-icons text-sm">add_shopping_cart</span> Beli
-                    </button>
+                    <div class="h-72 bg-teal-50 dark:bg-slate-700 overflow-hidden border-b dark:border-slate-600">
+                        <img src="{{ work.cover | default: '/assets/images/placeholder.png' }}" 
+                             alt="{{ work.title }}" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="mb-2">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-2 py-1 rounded">
+                                {{ work.genre }}
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-teal-900 dark:text-teal-300 mb-1">{{ work.title }}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-xs mb-4 line-clamp-3 italic">
+                            {{ work.synopsis | default: "Karya literasi oleh M. Nafis Al-Mukhdi." }}
+                        </p>
+
+                        <div class="mt-auto space-y-2 pt-4 border-t dark:border-slate-700">
+                            {% if work.price_physical %}
+                            <div class="flex justify-between items-center bg-slate-50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+                                <span class="text-[9px] font-bold text-slate-500 uppercase ml-1">Cetak</span>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-sm font-black text-teal-700 dark:text-teal-400">{{ work.price_physical }}</span>
+                                    {% assign p_price = work.price_physical | replace: 'Rp.', '' | replace: '.', '' | strip %}
+                                    <button onclick="addToCart('{{ work.title | slugify }}-cetak', '{{ work.title }} (Cetak)', parseInt('{{ p_price }}'))" 
+                                            class="bg-teal-700 hover:bg-teal-600 text-white p-1.5 rounded-lg flex items-center transition shadow-sm">
+                                        <span class="material-icons text-sm">auto_stories</span>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if work.price_ebook %}
+                            <div class="flex justify-between items-center bg-slate-50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-800">
+                                <span class="text-[9px] font-bold text-slate-500 uppercase ml-1">E-Book</span>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-sm font-black text-teal-700 dark:text-teal-400">{{ work.price_ebook }}</span>
+                                    {% assign e_price = work.price_ebook | replace: 'Rp.', '' | replace: '.', '' | strip %}
+                                    <button onclick="addToCart('{{ work.title | slugify }}-ebook', '{{ work.title }} (E-Book)', parseInt('{{ e_price }}'))" 
+                                            class="bg-slate-800 hover:bg-slate-700 text-white p-1.5 rounded-lg flex items-center transition shadow-sm">
+                                        <span class="material-icons text-sm">smartphone</span>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+
+                {% endif %}
+            {% endif %}
         {% endfor %}
 
     </div>
 </main>
 
 <footer class="text-center py-8 text-gray-500 text-sm">
-    &copy; 2026 M. Nafis Al-Mukhdi. Built with HTML & Tailwind.
+    &copy; {{ "now" | date: "%Y" }} M. Nafis Al-Mukhdi. Built with HTML & Tailwind.
 </footer>
 
 <div id="cart-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-[100] flex justify-end">
