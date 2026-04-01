@@ -48,8 +48,8 @@ title: Beli Buku
                                 <span class="text-[9px] font-bold text-slate-500 uppercase ml-1">Cetak</span>
                                 <div class="flex items-center gap-3">
                                     <span class="text-sm font-black text-teal-700 dark:text-teal-400">{{ work.price_physical }}</span>
-                                    {% assign p_price = work.price_physical | replace: 'Rp.', '' | replace: '.', '' | strip %}
-                                    <button onclick="addToCart('{{ work.title | slugify }}-cetak', '{{ work.title }} (Cetak)', parseInt('{{ p_price }}'))" 
+                                    {% assign p_price = work.price_physical | replace: 'Rp. ', '' | replace: 'Rp ', '' | replace: '$', '' | replace: '.', '' | replace: ',', '' | strip %}
+                                    <button onclick="addToCart('{{ work.title | slugify }}-cetak', '{{ work.title }} (Cetak)', parsePrice('{{ p_price }}'))" 
                                             class="bg-teal-700 hover:bg-teal-600 text-white p-1.5 rounded-lg flex items-center transition shadow-sm">
                                         <span class="material-icons text-sm">auto_stories</span>
                                     </button>
@@ -62,8 +62,8 @@ title: Beli Buku
                                 <span class="text-[9px] font-bold text-slate-500 uppercase ml-1">E-Book</span>
                                 <div class="flex items-center gap-3">
                                     <span class="text-sm font-black text-teal-700 dark:text-teal-400">{{ work.price_ebook }}</span>
-                                    {% assign e_price = work.price_ebook | replace: 'Rp.', '' | replace: '.', '' | strip %}
-                                    <button onclick="addToCart('{{ work.title | slugify }}-ebook', '{{ work.title }} (E-Book)', parseInt('{{ e_price }}'))" 
+                                    {% assign e_price = work.price_ebook | replace: 'Rp. ', '' | replace: 'Rp ', '' | replace: '$', '' | replace: '.', '' | replace: ',', '' | strip %}
+                                    <button onclick="addToCart('{{ work.title | slugify }}-ebook', '{{ work.title }} (E-Book)', parsePrice('{{ e_price }}'))" 
                                             class="bg-slate-800 hover:bg-slate-700 text-white p-1.5 rounded-lg flex items-center transition shadow-sm">
                                         <span class="material-icons text-sm">smartphone</span>
                                     </button>
@@ -142,6 +142,15 @@ title: Beli Buku
 <script>
     let cart = [];
 
+    function parsePrice(priceStr) {
+        // Handle "Gratis" or empty values
+        if (!priceStr || priceStr.toLowerCase() === 'gratis') return 0;
+        
+        // Parse integer and return 0 if NaN
+        const parsed = parseInt(priceStr, 10);
+        return isNaN(parsed) ? 0 : parsed;
+    }
+
     function toggleCart() {
         const modal = document.getElementById('cart-modal');
         modal.classList.toggle('hidden');
@@ -180,11 +189,12 @@ title: Beli Buku
         cart.forEach(item => {
             total += item.price * item.qty;
             totalQty += item.qty;
+            const priceDisplay = item.price === 0 ? 'Gratis' : `Rp ${item.price.toLocaleString()}`;
             list.innerHTML += `
                 <div class="flex justify-between items-center bg-gray-50 dark:bg-slate-800 p-4 rounded-lg">
                     <div>
                         <p class="font-bold text-teal-900 dark:text-teal-300">${item.title}</p>
-                        <p class="text-xs text-gray-500">${item.price.toLocaleString()}</p>
+                        <p class="text-xs text-gray-500">${priceDisplay}</p>
                     </div>
                     <div class="flex items-center gap-3">
                         <button onclick="updateQty('${item.id}', -1)" class="w-8 h-8 flex items-center justify-center bg-gray-200 dark:bg-slate-700 rounded-full text-red-600">-</button>
