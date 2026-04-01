@@ -152,9 +152,16 @@ title: Beli Buku
             }
         }
 
-        document.getElementById('order-form').onsubmit = function(e) {
+    document.getElementById('order-form').onsubmit = function(e) {
     e.preventDefault();
     
+    // Pesan Peringatan Privasi
+    const confirmPrivacy = confirm(
+        "PENTING:\n\nAnda akan terhubung ke nomor WhatsApp pribadi penulis.\n\nMohon untuk menjaga etika dan TIDAK menyebarluaskan nomor ini demi kenyamanan bersama.\n\nLanjutkan pemesanan?"
+    );
+
+    if (!confirmPrivacy) return; // Jika pembeli klik 'Cancel', proses berhenti.
+
     const inv = 'INV-' + Date.now().toString().slice(-5);
     const name = document.getElementById('cust-name').value;
     const method = document.getElementById('contact-method').value;
@@ -164,10 +171,9 @@ title: Beli Buku
 
     let details = cart.map(i => `- ${i.title} (${i.qty} eks)`).join('\n');
     
-    const message = `*KONFIRMASI PESANAN [${inv}]*\n\nNama: ${name}\nKontak: ${contact} (${method})\nAlamat: ${address}\n\n*PESANAN:*\n${details}\n\n*TOTAL:* ${total}`;
+    const message = `*KONFIRMASI PESANAN [${inv}]*\n\nNama: ${name}\nKontak: ${contact} (${method})\nAlamat: ${address}\n\n*PESANAN:*\n${details}\n\n*TOTAL:* ${total}\n\n---`;
     
     const encodedNumber = "NjI4NTI1MDE3OTM4MA=="; 
-    
     const targetNumber = atob(encodedNumber);
     const waDirectLink = `https://wa.me/${targetNumber}?text=${encodeURIComponent(message)}`;
     
