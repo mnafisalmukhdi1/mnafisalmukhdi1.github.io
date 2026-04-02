@@ -54,7 +54,7 @@ title: Beli Buku
                                 <div class="flex items-center gap-3">
                                     <span class="text-sm font-black text-teal-700 dark:text-teal-400">{{ work.price_physical }}</span>
                                     {% assign p_price = work.price_physical | replace: 'Rp. ', '' | replace: 'Rp ', '' | replace: '$', '' | replace: '.', '' | replace: ',', '' | strip %}
-                                    <button onclick="addToCart('{{ work.title | slugify }}-cetak', '{{ work.title }} (Cetak)', parsePrice('{{ p_price }}'))" 
+                                    <button data-slug="{{ work.title | slugify }}-cetak" onclick="addToCart('{{ work.title | slugify }}-cetak', '{{ work.title }} (Cetak)', parsePrice('{{ p_price }}'))" 
                                             class="bg-teal-700 hover:bg-teal-600 text-white p-1.5 rounded-lg flex items-center transition shadow-sm">
                                         <span class="material-icons text-sm">auto_stories</span>
                                     </button>
@@ -68,7 +68,7 @@ title: Beli Buku
                                 <div class="flex items-center gap-3">
                                     <span class="text-sm font-black text-teal-700 dark:text-teal-400">{{ work.price_ebook }}</span>
                                     {% assign e_price = work.price_ebook | replace: 'Rp. ', '' | replace: 'Rp ', '' | replace: '$', '' | replace: '.', '' | replace: ',', '' | strip %}
-                                    <button onclick="addToCart('{{ work.title | slugify }}-ebook', '{{ work.title }} (E-Book)', parsePrice('{{ e_price }}'))" 
+                                    <button data-slug="{{ work.title | slugify }}-ebook" onclick="addToCart('{{ work.title | slugify }}-ebook', '{{ work.title }} (E-Book)', parsePrice('{{ e_price }}'))" 
                                             class="bg-slate-800 hover:bg-slate-700 text-white p-1.5 rounded-lg flex items-center transition shadow-sm">
                                         <span class="material-icons material-symbols-outlined text-sm">mobile_text_2</span>
                                     </button>
@@ -220,6 +220,23 @@ title: Beli Buku
             list.innerHTML = '<p class="text-center text-gray-400 py-10 italic">Belum ada buku terpilih.</p>';
         }
     }
+
+    window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const bookSlug = params.get('book') || params.get('id'); // Mendukung ?book= atau ?id=
+
+    if (bookSlug) {
+        // Cari tombol yang memiliki data-slug sesuai URL
+        const targetButton = document.querySelector(`[data-slug="${bookSlug}"]`);
+        
+        if (targetButton) {
+            // Beri jeda sedikit agar transisi halaman selesai, lalu klik otomatis
+            setTimeout(() => {
+                targetButton.click();
+            }, 500);
+        }
+    }
+});
 
     document.getElementById('order-form').onsubmit = function(e) {
         e.preventDefault();
