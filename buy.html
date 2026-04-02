@@ -69,7 +69,7 @@ title: Beli Buku
                                     {% assign e_price = work.price_ebook | replace: 'Rp. ', '' | replace: 'Rp ', '' | replace: '$', '' | replace: '.', '' | replace: ',', '' | strip %}
                                     <button onclick="addToCart('{{ work.title | slugify }}-ebook', '{{ work.title }} (E-Book)', parsePrice('{{ e_price }}'))" 
                                             class="bg-slate-800 hover:bg-slate-700 text-white p-1.5 rounded-lg flex items-center transition shadow-sm">
-                                        <span class="material-icons text-sm">smartphone</span>
+                                        <span class="material-icons text-sm">mobile_text_2</span>
                                     </button>
                                 </div>
                             </div>
