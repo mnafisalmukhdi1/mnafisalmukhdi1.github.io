@@ -31,7 +31,8 @@ title: Beli Buku
                     <div class="h-72 bg-teal-50 dark:bg-slate-700 overflow-hidden border-b dark:border-slate-600">
                         <img src="{{ work.cover | default: '/assets/images/placeholder.png' }}" 
                              alt="{{ work.title }}" 
-                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                             class="w-full h-full object-cover transition duration-500 hover:scale-110"
+                             loading="lazy">
                     </div>
 
                     <div class="p-6 flex-grow flex flex-col">
