@@ -9,6 +9,8 @@ story_link: "https://story.nafis1.my.id/86-the-drama"
 googleplay: "https://play.google.com/store/books/details/M_Nafis_Al_Mukhdi_86?id=AlD2DwAAQBAJ"
 synopsis: "86: The Drama merupakan sempalan (spin-off) dari Detektif Sekolahan dengan tokoh utama kepolisian yang telah disebutkan pada cerita sebelumnya, yakni Sukamawar, Kebun Melati dan Pasir Putih. Bercerita tentang berbagai perwira dari satuan tugas Kepolisian Resor Kota Sukamawar bekerja sama dengan Kepolisian Resor Kota Kebun Melati dan Kepolisian Resor Kota Pasir Putih dalam menghadapi berbagai kasus kriminal sampai menangkap oknum polisi."
 genre: "Misteri-Thriller"
+wid: "WID-MNAM-26-24804"
+publisher: "mnafisalmukhdi1"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/86-the-drama"
   text: "Karyakarsa"
@@ -19,7 +21,7 @@ external_links:
 - url: "https://nyawer.co/MNafisAlMukhdi1/ebook-86-the-drama-katalog"
   text: "Nyawer"
   class: "bg-purple-600 hover:bg-purple-500 text-white"
-- url: "https://lynk.id/mnafisalmukhdi1"
+- url: "https://lynk.id/mnafisalmukhdi1/mez75kndmk1z"
   text: "Lynk"
   class: "bg-emerald-600 hover:bg-emerald-500 text-white"
 ---

@@ -23,8 +23,9 @@ title: {{ page.title }}
   <div>
     <h3 class="text-lg font-semibold text-teal-900 dark:text-teal-300 mb-2">Detail</h3>
     <ul class="text-sm space-y-1">
-      {% if page.size %}<li>Ukuran: {{ page.size }}</li>{% endif %}
+      {%if page.wid %}<li>WID: {{ page.wid }}</li>{% endif %}
       {% if page.isbn %}<li>ISBN: {{ page.isbn }}</li>{% endif %}
+      {% if page.size %}<li>Ukuran: {{ page.size }}</li>{% endif %}
       {% if page.publisher %}<li>Penerbit: {{ page.publisher }}</li>{% endif %}
       {% if page.release %}<li>Terbit: {{ page.release }}</li>{% endif %}
     </ul>
