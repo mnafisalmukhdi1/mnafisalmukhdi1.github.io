@@ -10,6 +10,7 @@ price_ebook: "Rp. 5.000"
 story_link: "https://story.nafis1.my.id/cantaloupe/"
 googleplay: "https://play.google.com/store/books/details?id=2kY8EQAAQBAJ"
 synopsis: "Cantaloupe adalah sebuah novela yang mengajak pembaca merenungkan perjalanan hidup mereka sendiri, mengingatkan bahwa setiap jiwa diciptakan untuk menjadi sesuatu yang berharga."
+wid: "WID-MNAM-26-80438"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/cantaloupe"
   text: "Karyakarsa"

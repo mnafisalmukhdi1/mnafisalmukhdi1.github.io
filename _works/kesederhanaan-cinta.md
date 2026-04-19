@@ -7,6 +7,7 @@ release: "30 April 2020"
 price_ebook: "Rp. 8.000"
 googleplay: "https://play.google.com/store/books/details/M_Nafis_Al_Mukhdi_Kesederhanaan_Cinta?id=CEHgDwAAQBAJ"
 synopsis: "Kesederhanaan Cinta adalah cerita bersambung dengan genre fiksi remaja islami yang mengandung unsur drama dan percintaan. Novel ini bercerita tentang Fida Nurhalisa sebagai gadis berusia 18 tahun menghadapi nasibnya yang kurang mampu, bertemu dengan Munajat Ali, mantan berandalan yang menyatakan cinta kepadanya karena Fida merubah hidupnya menjadi lebih baik namun Fida lebih memilih Fiqri Jayyid, temannya dari TK yang telah banyak berbuat baik kepadanya."
+wid: "WID-MNAM-26-69830"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/kesederhanaan-cinta-79858"
   text: "Karyakarsa"

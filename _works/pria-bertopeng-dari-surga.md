@@ -9,6 +9,7 @@ wattpad: "https://www.wattpad.com/story/236345205-pria-bertopeng-dari-surga"
 price_ebook: "Rp. 8.000"
 googleplay: "https://play.google.com/store/books/details/M_Nafis_Al_Mukhdi_Pria_Bertopeng_dari_Surga?id=wXH3DwAAQBAJ"
 synopsis: "Pria Bertopeng dari Surga bercerita tentang negara air dan negara api. Negara api adalah negara paling dibenci oleh negara-negara lain namun negara air selalu membantunya, saat negara api telah bangkit dan lebih hebat negara api malah menyerang negara air dan hal tersebut telah diramalkan di sebuah kitab kuno. Di kitab tersebut tertulis bahwa negara api hanya bisa dikalahkan oleh pria bertopeng dari surga. Dikerahkanlah semua orang untuk mencarinya."
+wid: "WID-MNAM-26-88441"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/pria-bertopeng-dari-surga"
   text: "Karyakarsa"

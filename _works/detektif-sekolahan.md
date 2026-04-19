@@ -19,6 +19,7 @@ shopee: "https://shopee.co.id/product/222623615/9700794256?smtt=0.222627844-1666
 tokopedia: "https://tk.tokopedia.com/ZS5MyM8L8/"
 price_ebook: "Rp 66.000"
 googleplay: "https://play.google.com/store/books/details?id=CVo8EQAAQBAJ"
+wid: "WID-MNAM-26-50251"
 external_links:
 - url: "https://nafis1.my.id/dsvn/"
   text: "Visual Novel"

@@ -11,6 +11,7 @@ synopsis: >
  Apa makna sesungguhnya dari ayat Al-Qur'an yang mereka kutip? Bagaimana dengan isi dari Bible mereka sendiri?
 
  “Yang Mereka Sebut Sebagai Ayat Kekerasan” membahas ini dengan rinci.
+wid: "WID-MNAM-26-21560"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/yang-mereka-sebut-sebagai-ayat-kekerasan"
   text: "Unduh di Karyakarsa"

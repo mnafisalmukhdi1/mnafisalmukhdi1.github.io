@@ -11,6 +11,13 @@ synopsis: "86: The Drama merupakan sempalan (spin-off) dari Detektif Sekolahan d
 genre: "Misteri-Thriller"
 wid: "WID-MNAM-26-24804"
 publisher: "mnafisalmukhdi1"
+related:
+  - title: "Enam Tanda Tanya"
+    url: "/works/enam-tanda-tanya"
+  - title: "Detektif Sekolahan"
+    url: "/works/detektif-sekolahan"
+  - title: "IF"
+    url: "/works/if"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/86-the-drama"
   text: "Beli di Karyakarsa"

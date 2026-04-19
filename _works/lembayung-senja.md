@@ -16,4 +16,5 @@ shopee: "https://shopee.co.id/product/222623615/4366230514?smtt=0.222627844-1666
 price_ebook: "Rp. 66.000"
 googleplay: "https://play.google.com/store/books/details/M_Nafis_Al_Mukhdi_Lembayung_Senja?id=Kek7EQAAQBAJ"
 synopsis: "Lembayung Senja adalah tetralogi cerpen horor fantasi yang terinspirasi dari mitos masyarakat Banjar."
+wid: "WID-MNAM-26-53902"
 ---

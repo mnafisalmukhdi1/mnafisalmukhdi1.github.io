@@ -15,6 +15,7 @@ tokopedia: "https://tk.tokopedia.com/ZSBJA7wGV/"
 price_ebook: "Rp. 12.000"
 googleplay: "https://play.google.com/store/books/details/M_Nafis_Al_Mukhdi_Sandiwara_Hikayat?id=356LEAAAQBAJ"
 synopsis: "Sandiwara Hikayat berkisah tentang seorang raja nan bijaksana bernama Sultan Amrullah dan kehidupannya."
+wid: "WID-MNAM-26-39962"
 external_links:
 - url : "https://shop-id.tokopedia.com/view/product/1731773594536412184"
   text: "Beli di Tokopedia Shop"

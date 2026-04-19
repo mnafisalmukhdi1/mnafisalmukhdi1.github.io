@@ -8,6 +8,7 @@ release: "1 Mei 2024"
 price_ebook: "Rp. 7.000"
 googleplay: "https://play.google.com/store/books/details?id=LSwFEQAAQBAJ"
 synopsis: "Rasyid, seorang mahasiswa perantauan, pulang kampung saat Ramadan. Simak kisah kehidupannya saat dia bertemu keluarga dan temannya, Fahreza."
+wid: "WID-MNAM-26-63156"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/ra-684865"
   text: "Karyakarsa"

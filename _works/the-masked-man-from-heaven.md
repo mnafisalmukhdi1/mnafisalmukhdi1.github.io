@@ -8,6 +8,7 @@ release: "30 October 2022"
 price_ebook: "$0.8"
 googleplay: "https://play.google.com/store/books/details?id=GXiXEAAAQBAJ"
 synopsis: "The Masked Man from Heaven relates the narrative of water and fire nation. Other countries despise the fire country, but the water nation has always aided him, especially when the fire nation has grown stronger and the more powerful fire nation attacks the water nation, as promised in an ancient text. The fire country could only be defeated by a masked man from heaven, according to the book. Everyone was dispatched to find him."
+wid: "WID-MNAM-26-48677"
 external_links:
 - url: "https://www.webnovel.com/book/22670622605681405"
   text: "WebNovel"

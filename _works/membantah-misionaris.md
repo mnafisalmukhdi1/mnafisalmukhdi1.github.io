@@ -11,6 +11,7 @@ synopsis: >
  Bagaimana ayat-ayat itu seharusnya dipahami?
 
  Bersumber dari kajian-kajian Dondy Tan, rangkuman ayat yang mereka gunakan, tuduhan yang mereka lemparkan, dan bagaimana memberi bantahan ada di sini.
+wid: "WID-MNAM-26-99832"
 external_links:
 - url: "https://karyakarsa.com/mnafisalmukhdi1/membantah-misionaris"
   text: "Unduh di Karyakarsa"
