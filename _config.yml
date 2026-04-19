@@ -5,7 +5,7 @@ url: "https://nafis1.my.id"
 collections:
   works:
     output: true
-    permalink: /works/:title/
+    permalink: /works/:title.html
 markdown: kramdown
 plugins:
   - jekyll-feed

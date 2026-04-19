@@ -1,4 +1,4 @@
 ---
 layout: 301
-link: "/works/"
+link: "/works/86-the-drama/"
 ---
