@@ -1,0 +1,29 @@
+---
+layout: default
+title: Donasi
+---
+{% include header.html %}
+	<script>
+		function initTabs() {
+			return {
+				activeTab: 1,
+				tabs: [
+					{ id: 1, name: 'Platform Donasi' },
+					{ id: 2, name: 'Dompet Digital' },
+					{ id: 3, name: 'Internasional' }
+				]
+			}
+		}
+	</script>
+	<div x-data="initTabs()" class="w-full">
+		<div class="flex gap-2 mb-8 border-b border-gray-300">
+			<template x-for="tab in tabs" :key="tab.id">
+				<button
+					@click="activeTab = tab.id"
+					:class="activeTab === tab.id ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600 hover:text-gray-800'"
+					class="px-4 py-3 font-medium transition whitespace-nowrap"
+					x-text="tab.name">
+				</button>
+			</template>
+		</div>
+		<main class="w-full mx-auto px-4 text-center">
