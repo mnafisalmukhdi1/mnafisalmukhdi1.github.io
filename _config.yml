@@ -6,6 +6,17 @@ collections:
   works:
     output: true
     permalink: /works/:title.html
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      sitemap: true
+  - scope:
+      path: ""
+      type: works
+    values:
+      sitemap: true
 markdown: kramdown
 plugins:
   - jekyll-feed

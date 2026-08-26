@@ -2,18 +2,18 @@
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% assign pages = site.pages | where_exp: "page", "page.sitemap != false and page.url != '/sitemap.xml'" %}
-{% for page in pages %}
+{% for page in site.html_pages %}
+{% if page.sitemap != false %}
   <url>
     <loc>{{ page.url | absolute_url }}</loc>
   </url>
+{% endif %}
 {% endfor %}
-{% for collection in site.collections %}
-{% assign documents = collection.docs | where_exp: "document", "document.sitemap != false" %}
-{% for document in documents %}
+{% for document in site.documents %}
+{% if document.sitemap != false %}
   <url>
     <loc>{{ document.url | absolute_url }}</loc>
   </url>
-{% endfor %}
+{% endif %}
 {% endfor %}
 </urlset>
