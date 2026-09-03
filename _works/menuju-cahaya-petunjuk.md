@@ -11,5 +11,5 @@ wid: "WID-MNAM-26-26117"
 external_links:
 - url: "https://nafis1.my.id/cdn/files/Menuju Cahaya Petunjuk.pdf"
   text: "Baca dan Unduh"
-  class: "bg-white hover:bg-slate-100"
+  class: "bg-white hover:bg-slate-100 text-black"
 ---
