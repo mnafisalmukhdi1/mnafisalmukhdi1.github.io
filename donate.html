@@ -3,45 +3,52 @@ layout: default
 title: Donasi
 ---
 {% include header.html %}
-	<script>
-		function initTabs() {
-			return {
-				activeTab: 1,
-				tabs: [
-					{ id: 1, name: 'Platform Donasi' },
-					{ id: 2, name: 'Dompet Digital' },
-					{ id: 3, name: 'Internasional' }
-				]
-			}
-		}
-	</script>
-	<div x-data="initTabs()" class="w-full">
-		<div class="flex gap-2 mb-8 border-b border-gray-300">
-			<template x-for="tab in tabs" :key="tab.id">
-				<button
-					@click="activeTab = tab.id"
-					:class="activeTab === tab.id ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600 hover:text-gray-800'"
-					class="px-4 py-3 font-medium transition whitespace-nowrap"
-					x-text="tab.name">
-				</button>
-			</template>
-		</div>
-		<main class="w-full mx-auto px-4 text-center">
-			<section x-show="activeTab === 1">
-				<a href="https://trakteer.id/mnafisalmukhdi1/tip" target="_blank" class="block w-full bg-red-700 hover:bg-red-600 mb-4 pt-4 pb-4 rounded-lg text-white">Trakteer</a>
-				<a href="https://karyakarsa.com/mnafisalmukhdi1/tip" target="_blank" class="block w-full bg-pink-700 hover:bg-pink-600 mb-4 pt-4 pb-4 rounded-lg text-white">Karyakarsa</a>
-				<a href="https://nyawer.co/MNafisAlMukhdi1" target="_blank" class="block w-full bg-purple-600 hover:bg-purple-500 mb-4 pt-4 pb-4 rounded-lg text-white">Nyawer</a>
-				<a href="https://tiptip.co/p/mnafisalmukhdi1" target="_blank" class="block w-full bg-orange-600 hover:bg-orange-500 mb-4 pt-4 pb-4 rounded-lg text-white">TipTip</a>
-				<a href="https://ko-fi.com/mnafisalmukhdi1" target="_blank" class="block w-full bg-pink-500 hover:bg-pink-400 mb-4 pt-4 pb-4 rounded-lg text-white">Ko-Fi</a>
-			</section>	
-			<section x-show="activeTab === 2">
-				<a href="https://link.dana.id/qr/58e1xng4" target="_blank" class="block w-full bg-sky-500 hover:bg-sky-400 mb-4 pt-4 pb-4 rounded-lg text-white">Dana</a>
-				<a href="https://flip.id/me/m.nafisalmukhdi" target="_blank" class="block w-full bg-orange-600 hover:bg-orange-500 mb-4 pt-4 pb-4 rounded-lg text-white">Flip</a>
-				<a href="https://tako.id/mnafisalmukhdi1" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-500 mb-4 pt-4 pb-4 rounded-lg text-white">Tako</a>
-			</section>
-			<section x-show="activeTab === 3">
-				<a href="https://paypal.me/mnafisalmukhdi" target="_blank" class="block w-full bg-blue-800 hover:bg-blue-700 mb-4 pt-4 pb-4 rounded-lg text-white">PayPal</a>
-				<a href="https://streamlabs.com/mnafisal-mukhdi/tip" target="_blank" class="block w-full bg-cyan-200 hover:bg-cyan-100 mb-4 pt-4 pb-4 rounded-lg">StreamLabs</a>
-			</section>
-		</main>
-	</div>
+
+<script>
+  function initTabs() {
+    return {
+      activeTab: 1,
+      tabs: [
+        { id: 1, name: 'Platform Donasi' },
+        { id: 2, name: 'Dompet Digital' },
+        { id: 3, name: 'Internasional' }
+      ]
+    };
+  }
+</script>
+
+<section class="text-center max-w-2xl mx-auto px-4 pt-10 pb-6">
+  <h1 class="text-2xl font-semibold tracking-tight text-teal-900 dark:text-teal-300">Donasi</h1>
+  <p class="mt-2 text-gray-500 dark:text-gray-400">Dukung karya dan proyek saya</p>
+</section>
+
+<div x-data="initTabs()" class="max-w-md mx-auto px-4 pb-16">
+  <!-- Tab pills -->
+  <div class="flex flex-wrap justify-center gap-x-1 gap-y-2 mb-8 text-sm text-gray-500 dark:text-gray-400">
+    <template x-for="tab in tabs" :key="tab.id">
+      <button @click="activeTab = tab.id"
+              :class="activeTab === tab.id ? 'bg-teal-900 text-white dark:bg-teal-300 dark:text-slate-900 font-medium' : 'hover:bg-teal-50 hover:text-teal-800 dark:hover:bg-slate-800 dark:hover:text-teal-300'"
+              class="px-4 py-1.5 rounded-full transition whitespace-nowrap"
+              x-text="tab.name"></button>
+    </template>
+  </div>
+
+  <main class="space-y-3">
+    <section x-show="activeTab === 1" class="space-y-3">
+      <a href="https://trakteer.id/mnafisalmukhdi1/tip" target="_blank" rel="noopener" class="block w-full bg-red-700 hover:bg-red-600 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">Trakteer</a>
+      <a href="https://karyakarsa.com/mnafisalmukhdi1/tip" target="_blank" rel="noopener" class="block w-full bg-pink-700 hover:bg-pink-600 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">Karyakarsa</a>
+      <a href="https://nyawer.co/MNafisAlMukhdi1" target="_blank" rel="noopener" class="block w-full bg-purple-600 hover:bg-purple-500 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">Nyawer</a>
+      <a href="https://tiptip.co/p/mnafisalmukhdi1" target="_blank" rel="noopener" class="block w-full bg-orange-600 hover:bg-orange-500 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">TipTip</a>
+      <a href="https://ko-fi.com/mnafisalmukhdi1" target="_blank" rel="noopener" class="block w-full bg-pink-500 hover:bg-pink-400 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">Ko-Fi</a>
+    </section>
+    <section x-show="activeTab === 2" x-cloak class="space-y-3">
+      <a href="https://link.dana.id/qr/58e1xng4" target="_blank" rel="noopener" class="block w-full bg-sky-500 hover:bg-sky-400 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">Dana</a>
+      <a href="https://flip.id/me/m.nafisalmukhdi" target="_blank" rel="noopener" class="block w-full bg-orange-600 hover:bg-orange-500 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">Flip</a>
+      <a href="https://tako.id/mnafisalmukhdi1" target="_blank" rel="noopener" class="block w-full bg-blue-600 hover:bg-blue-500 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">Tako</a>
+    </section>
+    <section x-show="activeTab === 3" x-cloak class="space-y-3">
+      <a href="https://paypal.me/mnafisalmukhdi" target="_blank" rel="noopener" class="block w-full bg-blue-800 hover:bg-blue-700 py-3 px-4 rounded-xl text-white text-sm font-medium text-center transition">PayPal</a>
+      <a href="https://streamlabs.com/mnafisal-mukhdi/tip" target="_blank" rel="noopener" class="block w-full bg-cyan-200 hover:bg-cyan-100 py-3 px-4 rounded-xl text-slate-900 text-sm font-medium text-center transition">StreamLabs</a>
+    </section>
+  </main>
+</div>

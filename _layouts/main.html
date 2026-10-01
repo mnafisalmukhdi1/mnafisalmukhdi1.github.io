@@ -2,38 +2,37 @@
 layout: default
 title: M. Nafis Al-Mukhdi
 ---
-<!-- Use your header include -->
 {% include header.html %}
 
-<section class="text-center max-w-3xl mx-auto px-4 py-6">
-  <p class="text-lg text-teal-800 dark:text-teal-400">
-    Penulis, pengajar, dan kontributor
+<section class="text-center max-w-2xl mx-auto px-4 pt-10 pb-6">
+  <p class="text-sm uppercase tracking-[0.2em] text-teal-700 dark:text-teal-400">
+    Penulis &middot; Pengajar &middot; Kontributor
   </p>
-  <p class="mt-4">
+  <p class="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
     Saya berkarya melalui tulisan, pengajaran, dan kontribusi komunitas untuk masa depan.
   </p>
 </section>
 
-<!-- Expandable cards driven by _data/nav.yml -->
-<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 py-8">
+<!-- Tab pills driven by _data/nav.yml -->
+<div x-data="{ activeTab: 1 }" class="max-w-3xl mx-auto px-4 pb-16">
+  {% include nav.html %}
+
+  <!-- Panel links for each category -->
   {% for item in site.data.nav %}
-  <div x-data="{ open: false }"
-       class="bg-white dark:bg-slate-800 shadow-md rounded-lg p-6 text-center hover:shadow-lg transition">
-    <div class="text-2xl mb-2">{{ item.icon }}</div>
-    <h2 class="font-bold text-teal-900 dark:text-teal-300 mb-1">{{ item.title }}</h2>
-    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">{{ item.description }}</p>
-    <button @click="open = !open"
-            class="bg-teal-900 text-white px-4 py-2 rounded text-sm">
-      Pilih
-    </button>
-    <div x-show="open" class="mt-4 space-y-2">
+  {% capture idx %}{{ forloop.index }}{% endcapture %}
+  <div x-show="activeTab === {{ idx }}" x-cloak x-transition.opacity.duration.300ms
+       class="rounded-2xl border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm">
+    <h2 class="text-lg font-semibold text-teal-900 dark:text-teal-300">{{ item.title }}</h2>
+    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-6">{{ item.description }}</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
       {% for link in item.links %}
-      <a href="{{ link.url }}" target="_blank"
-         class="block w-full px-4 py-2 rounded text-sm font-semibold text-center {{ link.class }}">
-         {{ link.label }}
+      <a href="{{ link.url }}" target="_blank" rel="noopener"
+         class="group flex items-center justify-between py-2.5 border-b border-gray-50 dark:border-slate-800/50 text-gray-700 dark:text-gray-300 hover:text-teal-800 dark:hover:text-teal-300 transition">
+        <span class="text-sm">{{ link.label }}</span>
+        <span class="material-icons text-base opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition">north_east</span>
       </a>
       {% endfor %}
     </div>
   </div>
   {% endfor %}
-</section>
+</div>

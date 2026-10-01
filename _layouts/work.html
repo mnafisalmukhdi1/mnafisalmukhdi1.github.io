@@ -2,69 +2,71 @@
 layout: default
 title: {{ page.title }}
 ---
+<main class="max-w-5xl mx-auto px-4 py-12">
+  <section class="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-10 items-start">
+    <img src="{{ page.cover }}" alt="{{ page.title }}"
+         class="w-48 md:w-full mx-auto rounded-xl border border-gray-100 dark:border-slate-800 shadow-sm object-cover" />
+    <div>
+      {% if page.type %}
+      <p class="text-xs uppercase tracking-[0.2em] text-teal-700 dark:text-teal-400 mb-2">{{ page.type | capitalize }}</p>
+      {% endif %}
+      <h1 class="text-3xl font-semibold tracking-tight text-teal-900 dark:text-teal-300">{{ page.title }}</h1>
+      <h2 class="mt-1 text-gray-500 dark:text-gray-400">{{ page.author }}</h2>
+      {% if page.tagline %}<p class="mt-3 italic text-gray-600 dark:text-gray-300">&ldquo;{{ page.tagline }}&rdquo;</p>{% endif %}
+      {% if page.genre %}
+      <p class="mt-3 inline-block text-xs px-3 py-1 rounded-full bg-teal-50 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300">{{ page.genre }}</p>
+      {% endif %}
+      <p class="mt-5 leading-relaxed text-gray-700 dark:text-gray-300">{{ page.synopsis }}</p>
+    </div>
+  </section>
 
-<section class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-  <img src="{{ page.cover }}" alt="{{ page.title }}" class="max-w-xs mx-auto rounded-lg shadow-md object-cover" />
-  <div class="self-start">
-    <h1 class="text-3xl font-bold text-teal-900 dark:text-teal-300 mb-2">{{ page.title }}</h1>
-    <h2 class="text-lg text-teal-800 dark:text-teal-400 mb-1">{{ page.author }}</h2>
-    {%if page.tagline %}<p class="italic mb-2">"{{ page.tagline }}"</p>{% endif %}
-    {% if page.type %}
-    <p class="text-sm font-semibold mb-2 text-teal-700 dark:text-teal-300">{{ page.type | capitalize }}</p>
-    {% endif %}
-    {% if page.genre %}
-    <p class="text-sm mb-4">Genre: {{ page.genre }}</p>
-    {% endif %}
-    <p>{{ page.synopsis }}</p>
-  </div>
-</section>
+  <section class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+    <div>
+      <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-3">Detail</h3>
+      <ul class="text-sm space-y-1.5 text-gray-700 dark:text-gray-300">
+        {%if page.wid %}<li>WID: {{ page.wid }}</li>{% endif %}
+        {% if page.isbn %}<li>ISBN: {{ page.isbn }}</li>{% endif %}
+        {% if page.size %}<li>Ukuran: {{ page.size }}</li>{% endif %}
+        {% if page.publisher %}<li>Penerbit: {{ page.publisher }}</li>{% endif %}
+        {% if page.release %}<li>Terbit: {{ page.release }}</li>{% endif %}
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-3">Harga</h3>
+      <ul class="text-sm space-y-1.5 text-gray-700 dark:text-gray-300">
+        {% if page.price_physical %}<li>Fisik: {{ page.price_physical }}</li>{% endif %}
+        {% if page.price_ebook %}<li>Ebook: {{ page.price_ebook }}</li>{% endif %}
+        {% if page.price %}<li>{{ page.price }}</li>{% endif %}
+      </ul>
+    </div>
+  </section>
 
-<section class="max-w-4xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-  <div>
-    <h3 class="text-lg font-semibold text-teal-900 dark:text-teal-300 mb-2">Detail</h3>
-    <ul class="text-sm space-y-1">
-      {%if page.wid %}<li>WID: {{ page.wid }}</li>{% endif %}
-      {% if page.isbn %}<li>ISBN: {{ page.isbn }}</li>{% endif %}
-      {% if page.size %}<li>Ukuran: {{ page.size }}</li>{% endif %}
-      {% if page.publisher %}<li>Penerbit: {{ page.publisher }}</li>{% endif %}
-      {% if page.release %}<li>Terbit: {{ page.release }}</li>{% endif %}
+  <section class="mt-12 flex flex-wrap justify-center gap-3">
+    {% if page.story_link %}<a href="{{ page.story_link }}" target="_blank" rel="noopener" class="px-5 py-2 rounded-full text-sm font-medium border border-gray-200 dark:border-slate-700 hover:border-teal-600 hover:text-teal-700 dark:hover:text-teal-300 transition">Baca di story.nafis1.my.id</a>{% endif %}
+    {% if page.wattpad %}<a href="{{ page.wattpad }}" target="_blank" rel="noopener" class="px-5 py-2 rounded-full text-sm font-medium bg-orange-500 hover:bg-orange-400 text-white transition">Baca di Wattpad</a>{% endif %}
+    {% if page.kbm %}<a href="{{ page.kbm }}" target="_blank" rel="noopener" class="px-5 py-2 rounded-full text-sm font-medium bg-green-600 hover:bg-green-500 text-white transition">Baca di KBM</a>{% endif %}
+    {% if page.buy_link %}<a href="{{ page.buy_link }}" target="_blank" rel="noopener" class="px-5 py-2 rounded-full text-sm font-medium bg-teal-900 hover:bg-teal-700 text-white transition">Beli di Toko Nafis</a>{% endif %}
+    {% if page.shopee %}<a href="{{ page.shopee }}" target="_blank" rel="noopener" class="px-5 py-2 rounded-full text-sm font-medium bg-orange-600 hover:bg-orange-500 text-white transition">Beli di Shopee</a>{% endif %}
+    {% if page.googleplay %}<a href="{{ page.googleplay }}" target="_blank" rel="noopener" class="px-5 py-2 rounded-full text-sm font-medium bg-sky-500 hover:bg-sky-400 text-white transition">Beli di Google Play Books</a>{% endif %}
+    {% if page.external_links %}{% for link in page.external_links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="{{ link.class }} px-5 py-2 rounded-full text-sm font-medium text-white transition">{{ link.text }}</a>{% endfor %}{% endif %}
+  </section>
+
+  {% if page.quote %}
+  <section class="mt-14 max-w-2xl mx-auto text-center">
+    <blockquote class="italic text-lg text-teal-800 dark:text-teal-400 leading-relaxed">
+      &ldquo;{{ page.quote }}&rdquo;
+    </blockquote>
+  </section>
+  {% endif %}
+
+  {% if page.related %}
+  <section class="mt-12 max-w-2xl">
+    <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-3">Karya Terkait</h3>
+    <ul class="divide-y divide-gray-100 dark:divide-slate-800">
+      {% for related in page.related %}
+      <li><a href="{{ related.url }}" class="block py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:text-teal-800 dark:hover:text-teal-300 transition">{{ related.title }}</a></li>
+      {% endfor %}
     </ul>
-  </div>
-  <div>
-    <h3 class="text-lg font-semibold text-teal-900 dark:text-teal-300 mb-2">Harga</h3>
-    <ul class="text-sm space-y-1">
-      {% if page.price_physical %}<li>Fisik: {{ page.price_physical }}</li>{% endif %}
-      {% if page.price_ebook %}<li>Ebook: {{ page.price_ebook }}</li>{% endif %}
-      {% if page.price %}<li>{{ page.price }}</li>{% endif %}
-    </ul>
-  </div>
-</section>
-
-<section class="max-w-4xl mx-auto text-center py-6 space-x-4 flex flex-wrap justify-center gap-4">
-  {% if page.story_link %}<a href="{{ page.story_link }}" target="_blank" class="bg-white hover:bg-gray-100 rounded-full text-sm text-black font-semibold px-6 py-2">Baca di story.nafis1.my.id</a>{% endif %}
-  {% if page.wattpad %}<a href="{{ page.wattpad }}" class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold">Baca di Wattpad</a>{% endif %}
-  {% if page.kbm %}<a href="{{ page.kbm }}" class="bg-green-500 hover:bg-green-400 text-white px-6 py-2 rounded-full text-sm font-semibold">Baca di KBM</a>{% endif %}
-  {% if page.buy_link %}<a href="{{page.buy_link }}" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-semibold">Beli di Toko Nafis</a>{% endif %}
-  {% if page.shopee %}<a href="{{ page.shopee }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Beli di Shopee</a>{% endif %}
-  {% if page.googleplay %}<a href="{{ page.googleplay }}" class="bg-teal-900 text-white px-6 py-2 rounded-full text-sm font-semibold">Beli di Google Play Books</a>{% endif %}
-  {% if page.external_links %}{% for link in page.external_links %}<a href="{{ link.url }}" target="_blank" class="{{ link.class }} px-6 py-2 rounded-full text-sm font-semibold">{{ link.text }}</a>{% endfor %}{% endif %}
-</section>
-
-{% if page.quote %}
-<section class="max-w-3xl mx-auto px-4 py-8 text-center">
-  <blockquote class="italic text-lg text-teal-800 dark:text-teal-400">
-    "{{ page.quote }}"
-  </blockquote>
-</section>
-{% endif %}
-
-{% if page.related %}
-<section class="max-w-4xl mx-auto px-4 py-6">
-  <h3 class="text-xl font-bold text-teal-900 dark:text-teal-300 mb-4">Related Works</h3>
-  <ul class="list-disc list-inside space-y-2">
-    {% for related in page.related %}
-    <li><a href="{{ related.url }}" class="hover:underline">{{ related.title }}</a></li>
-    {% endfor %}
-  </ul>
-</section>
-{% endif %}
+  </section>
+  {% endif %}
+</main>

@@ -2,14 +2,13 @@
 layout: default
 title: "Portofolio"
 ---
-
 {% include header.html %}
 
-<!-- Hero Header -->
-<header class="bg-teal-900 text-white py-6 text-center">
-  <h1 class="text-3xl font-bold">Portofolio</h1>
-  <p class="text-lg mt-2">Karya literasi bahkan musik</p>
-</header>
+<!-- Hero -->
+<section class="text-center max-w-2xl mx-auto px-4 pt-10 pb-6">
+  <h1 class="text-2xl font-semibold tracking-tight text-teal-900 dark:text-teal-300">Portofolio</h1>
+  <p class="mt-2 text-gray-500 dark:text-gray-400">Karya literasi bahkan musik</p>
+</section>
 
 <!-- Build list of unique genres -->
 {% assign works_sorted = site.works | sort: "title" %}
@@ -27,21 +26,22 @@ title: "Portofolio"
 {% endfor %}
 {% assign genres = genres_str | split: "|" %}
 
-<!-- Category Menu -->
-<nav class="bg-white dark:bg-slate-800 shadow-sm py-4 flex flex-wrap justify-center gap-6 text-teal-900 dark:text-teal-300 font-semibold uppercase">
+<!-- Category menu -->
+<nav class="max-w-4xl mx-auto px-4 flex flex-wrap justify-center gap-x-1 gap-y-2 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-10">
   {% for genre in genres %}
     {% if genre != "" %}
-      <a href="#{{ genre | slugify }}" class="hover:text-teal-600 dark:hover:text-teal-400">{{ genre }}</a>
+      <a href="#{{ genre | slugify }}"
+         class="px-3 py-1.5 rounded-full hover:bg-teal-50 hover:text-teal-800 dark:hover:bg-slate-800 dark:hover:text-teal-300 transition">{{ genre }}</a>
     {% endif %}
   {% endfor %}
 </nav>
 
-<!-- Portfolio Flexible Cards -->
-<main class="max-w-6xl mx-auto px-4 py-8">
+<!-- Portfolio cards -->
+<main class="max-w-5xl mx-auto px-4 pb-16">
   {% for genre in genres %}
     {% if genre != "" %}
-      <h2 id="{{ genre | slugify }}" class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">{{ genre }}</h2>
-      <div class="flex flex-wrap gap-6 mb-12 justify-center md:justify-start">
+      <h2 id="{{ genre | slugify }}" class="text-sm font-semibold uppercase tracking-[0.2em] text-teal-800 dark:text-teal-400 mb-6 scroll-mt-8">{{ genre }}</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-14">
         {% for work in works_sorted %}
           {% assign has_genre = false %}
           {% if work.genre and work.genre != "" %}
@@ -55,21 +55,21 @@ title: "Portofolio"
           {% endif %}
 
           {% if has_genre %}
-          <!-- Work Card -->
-          <div class="w-64 bg-white dark:bg-slate-900 shadow-md rounded overflow-hidden">
-            <a href="{{ work.url }}" target="_blank">
+          <!-- Work card -->
+          <a href="{{ work.url }}" target="_blank"
+             class="group block bg-white dark:bg-slate-900 rounded-xl border border-gray-100 dark:border-slate-800 overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition">
+            <div class="aspect-[2/3] overflow-hidden bg-teal-50/50 dark:bg-slate-800">
               <img src="{{ work.cover | default: '/assets/images/placeholder.png' }}"
                    alt="{{ work.title }}"
-                   class="w-full h-80 object-cover"/>
-              <div class="p-4">
-                <h3 class="text-lg font-bold mb-2 text-teal-900 dark:text-teal-300">{{ work.title }}</h3>
-                {% if work.synopsis %}
-                  <p class="text-sm mb-4 text-gray-700 dark:text-gray-300">{{ work.synopsis | truncatewords: 20, '...' }}</p>
-                {% endif %}
-                <span class="inline-block bg-teal-900 dark:bg-teal-700 text-white px-4 py-2 rounded text-sm">Selengkapnya</span>
-              </div>
-            </a>
-          </div>
+                   class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500" loading="lazy"/>
+            </div>
+            <div class="p-4">
+              <h3 class="text-sm font-semibold text-teal-900 dark:text-teal-300 leading-snug">{{ work.title }}</h3>
+              {% if work.synopsis %}
+                <p class="mt-1.5 text-xs text-gray-500 dark:text-gray-400 line-clamp-2">{{ work.synopsis }}</p>
+              {% endif %}
+            </div>
+          </a>
           {% endif %}
         {% endfor %}
       </div>

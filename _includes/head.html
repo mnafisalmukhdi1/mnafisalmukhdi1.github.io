@@ -8,9 +8,27 @@
   <script>
     tailwind.config = {
       darkMode: 'class',
+      theme: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+      },
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <style type="text/tailwindcss">
+    [x-cloak] { display: none !important; }
+    .line-clamp-2, .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .line-clamp-2 { -webkit-line-clamp: 2; }
+    .line-clamp-3 { -webkit-line-clamp: 3; }
+  </style>
 </head>
-<body class="bg-[#fdfaf6] dark:bg-slate-900 text-gray-800 dark:text-gray-100 font-sans">
+<body class="bg-[#fdfaf6] dark:bg-slate-900 text-gray-800 dark:text-gray-100 font-sans antialiased">

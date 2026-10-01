@@ -3,138 +3,138 @@ layout: default
 title: "M. Nafis Al-Mukhdi"
 cover: "https://nafis1.my.id/cdn/mnam-2024.jpg"
 ---
-<header class="bg-teal-900 text-white py-6 text-center">
-  <h1 class="text-3xl font-bold">{{ page.title }}</h1>
-  <p class="text-lg mt-2">Penulis, pengajar, dan kontributor.</p>
-</header>
+{% include header.html %}
 
-<main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
-
-  <!-- Profil -->
-<section class="text-center">
+<!-- Profil -->
+<section class="text-center max-w-2xl mx-auto px-4 pt-10 pb-8">
   {% if page.cover %}
     <img src="{{ page.cover }}" alt="{{ page.title }}"
-         class="mx-auto shadow-md mb-4"
+         class="mx-auto rounded-xl border border-gray-100 dark:border-slate-800 shadow-sm mb-5"
          style="width:120px; height:160px; object-fit:cover;"/>
   {% endif %}
-  <p class="text-gray-700 dark:text-gray-300">
+  <h1 class="text-2xl font-semibold tracking-tight text-teal-900 dark:text-teal-300">{{ page.title }}</h1>
+  <p class="mt-2 text-sm uppercase tracking-[0.2em] text-teal-700 dark:text-teal-400">Penulis &middot; Pengajar &middot; Kontributor</p>
+  <p class="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
     Lahir 8 April 2002 di Hulu Sungai Utara, Kalimantan Selatan.<br>
-    Email: <a href="mailto:contact@nafis1.my.id" class="text-teal-600 dark:text-teal-400">contact@nafis1.my.id</a>
+    Email: <a href="mailto:contact@nafis1.my.id" class="text-teal-700 dark:text-teal-400 hover:underline underline-offset-2">contact@nafis1.my.id</a>
   </p>
 </section>
 
-<!-- Kemampuan -->
-<section>
-  <h2 class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">Kemampuan</h2>
-  <div class="flex flex-wrap justify-center gap-6">
+<main class="max-w-3xl mx-auto px-4 pb-16 space-y-14">
 
-    <!-- Bahasa -->
-    <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
-      <span class="material-icons text-teal-600 dark:text-teal-400 text-3xl mb-2">translate</span>
-      <p class="font-semibold">Bahasa</p>
-      <p class="text-sm">Banjar, Indonesia, Inggris</p>
+  <!-- Kemampuan -->
+  <section>
+    <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-5">Kemampuan</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+      <!-- Bahasa -->
+      <div class="border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl p-5 text-center">
+        <span class="material-icons text-teal-700 dark:text-teal-400 text-2xl mb-2">translate</span>
+        <p class="font-semibold text-sm">Bahasa</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Banjar, Indonesia, Inggris</p>
+      </div>
+
+      <!-- Web -->
+      <div class="border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl p-5 text-center">
+        <span class="material-icons text-teal-700 dark:text-teal-400 text-2xl mb-2">code</span>
+        <p class="font-semibold text-sm">Web</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">HTML5, CSS, MediaWiki</p>
+      </div>
+
+      <!-- Office -->
+      <div class="border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl p-5 text-center">
+        <span class="material-icons text-teal-700 dark:text-teal-400 text-2xl mb-2">description</span>
+        <p class="font-semibold text-sm">Office</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Word, PowerPoint</p>
+      </div>
+
     </div>
-
-    <!-- Web -->
-    <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
-      <span class="material-icons text-teal-600 dark:text-teal-400 text-3xl mb-2">code</span>
-      <p class="font-semibold">Web</p>
-      <p class="text-sm">HTML5, CSS, MediaWiki</p>
-    </div>
-
-    <!-- Office -->
-    <div class="w-40 bg-white dark:bg-slate-900 shadow rounded p-4 text-center">
-      <span class="material-icons text-teal-600 dark:text-teal-400 text-3xl mb-2">description</span>
-      <p class="font-semibold">Office</p>
-      <p class="text-sm">Word, PowerPoint</p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- Pendidikan -->
   <section>
-    <h2 class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">Pendidikan</h2>
-    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-      <li>RA Nurul Huda (2007–2008)</li>
-      <li>MIN 24 Hulu Sungai Utara (2008–2014)</li>
-      <li>MTs Nurul Huda (2014–2017)</li>
-      <li>MAN 1 Hulu Sungai Utara, Jurusan Ilmu Keagamaan (2017–2020)</li>
-      <li>STAI Rasyidiyah Khalidiyah Amuntai, PAI (2020–2024)</li>
+    <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-5">Pendidikan</h2>
+    <ul class="divide-y divide-gray-100 dark:divide-slate-800 text-sm text-gray-700 dark:text-gray-300">
+      <li class="py-2.5">RA Nurul Huda <span class="text-gray-400 dark:text-gray-500">(2007–2008)</span></li>
+      <li class="py-2.5">MIN 24 Hulu Sungai Utara <span class="text-gray-400 dark:text-gray-500">(2008–2014)</span></li>
+      <li class="py-2.5">MTs Nurul Huda <span class="text-gray-400 dark:text-gray-500">(2014–2017)</span></li>
+      <li class="py-2.5">MAN 1 Hulu Sungai Utara, Jurusan Ilmu Keagamaan <span class="text-gray-400 dark:text-gray-500">(2017–2020)</span></li>
+      <li class="py-2.5">STAI Rasyidiyah Khalidiyah Amuntai, PAI <span class="text-gray-400 dark:text-gray-500">(2020–2024)</span></li>
     </ul>
   </section>
 
   <!-- Pekerjaan -->
   <section>
-    <h2 class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">Pekerjaan</h2>
-    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-      <li>Kontributor di Proyek-proyek Yayasan Wikimedia (2018–sekarang)</li>
-      <li>Penulis di Wattpad (2019–2024)</li>
-      <li>Pengajar TPQ Al-Ikhlas (2021–sekarang)</li>
-      <li>Guru Al-Qur'an SMPIT Ihsanul Amal (2024–sekarang)</li>
-      <li>Anggota Divisi Multimedia Remaja Masjid Agung At-Taqwa Amuntai (2026–sekarang)</li>
+    <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-5">Pekerjaan</h2>
+    <ul class="divide-y divide-gray-100 dark:divide-slate-800 text-sm text-gray-700 dark:text-gray-300">
+      <li class="py-2.5">Kontributor di Proyek-proyek Yayasan Wikimedia <span class="text-gray-400 dark:text-gray-500">(2018–sekarang)</span></li>
+      <li class="py-2.5">Penulis di Wattpad <span class="text-gray-400 dark:text-gray-500">(2019–2024)</span></li>
+      <li class="py-2.5">Pengajar TPQ Al-Ikhlas <span class="text-gray-400 dark:text-gray-500">(2021–sekarang)</span></li>
+      <li class="py-2.5">Guru Al-Qur'an SMPIT Ihsanul Amal <span class="text-gray-400 dark:text-gray-500">(2024–sekarang)</span></li>
+      <li class="py-2.5">Anggota Divisi Multimedia Remaja Masjid Agung At-Taqwa Amuntai <span class="text-gray-400 dark:text-gray-500">(2026–sekarang)</span></li>
     </ul>
   </section>
 
   <!-- Pencapaian -->
   <section>
-  <h2 class="text-2xl font-bold text-teal-900 dark:text-teal-300 mb-4">Pencapaian</h2>
-  <div class="flex flex-wrap justify-center gap-6">
+    <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 mb-5">Pencapaian</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- Kontributor Terbaik -->
-    <div class="w-full md:w-80 bg-white dark:bg-slate-900 shadow rounded overflow-hidden">
-      <img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat1.jpg"
-           alt="Kontributor Terbaik"
-           class="w-full h-40 object-cover"/>
-      <div class="p-4">
-        <h4 class="text-xl font-bold dark:text-white mb-2">Kontributor Terbaik</h4>
-        <p class="text-sm dark:text-gray-300">
-          Menjadi "Kontributor Terbaik" dalam event menulis cerpen bertema "Harapan" yang diselenggarakan oleh 
-          <a href="https://pustakatunggal.blogspot.com/" target="_blank" class="text-blue-500 dark:text-blue-400 underline">Penerbit Pustaka Tunggal</a> (2019). 
-          Terpilih masuk antologi 
-          <a href="https://shopee.co.id/Lampion-Masa-Depan-i.13906891.3916017648" target="_blank" class="text-blue-500 dark:text-blue-400 underline">Lampion Masa Depan</a>.
-        </p>
+      <!-- Kontributor Terbaik -->
+      <div class="border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl overflow-hidden">
+        <img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat1.jpg"
+             alt="Kontributor Terbaik"
+             class="w-full h-40 object-cover" loading="lazy"/>
+        <div class="p-5">
+          <h4 class="font-semibold text-teal-900 dark:text-teal-300 mb-2">Kontributor Terbaik</h4>
+          <p class="text-xs leading-relaxed text-gray-600 dark:text-gray-300">
+            Menjadi "Kontributor Terbaik" dalam event menulis cerpen bertema "Harapan" yang diselenggarakan oleh
+            <a href="https://pustakatunggal.blogspot.com/" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">Penerbit Pustaka Tunggal</a> (2019).
+            Terpilih masuk antologi
+            <a href="https://shopee.co.id/Lampion-Masa-Depan-i.13906891.3916017648" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">Lampion Masa Depan</a>.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <!-- Peringkat Ketiga -->
-    <div class="w-full md:w-80 bg-white dark:bg-slate-900 shadow rounded overflow-hidden">
-      <img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat3.jpg"
-           alt="Peringkat Ketiga"
-           class="w-full h-40 object-cover"/>
-      <div class="p-4">
-        <h4 class="text-xl font-bold dark:text-white mb-2">Peringkat Ketiga</h4>
-        <p class="text-sm dark:text-gray-300">
-          Mendapatkan "Peringkat Ketiga" dalam kampanye 
-          <a href="https://id.wikimedia.org/wiki/1Lib1Ref" target="_blank" class="text-blue-500 dark:text-blue-400 underline">#1Lib1Ref #1Lib1RefID</a> 
-          yang diselenggarakan oleh 
-          <a href="https://wikimedia.or.id" target="_blank" class="text-blue-500 dark:text-blue-400 underline">Wikimedia Indonesia</a> (2022). 
-          Termasuk salah satu dari 
-          <a href="https://hashtags.wmcloud.org/all_users/?query=1lib1refid&project=id.wikipedia.org&startdate=2022-01-15&enddate=2022-02-05&search_type=or&user=" target="_blank" class="text-blue-500 dark:text-blue-400 underline">11 partisipan</a>.
-        </p>
+      <!-- Peringkat Ketiga -->
+      <div class="border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl overflow-hidden">
+        <img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat3.jpg"
+             alt="Peringkat Ketiga"
+             class="w-full h-40 object-cover" loading="lazy"/>
+        <div class="p-5">
+          <h4 class="font-semibold text-teal-900 dark:text-teal-300 mb-2">Peringkat Ketiga</h4>
+          <p class="text-xs leading-relaxed text-gray-600 dark:text-gray-300">
+            Mendapatkan "Peringkat Ketiga" dalam kampanye
+            <a href="https://id.wikimedia.org/wiki/1Lib1Ref" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">#1Lib1Ref #1Lib1RefID</a>
+            yang diselenggarakan oleh
+            <a href="https://wikimedia.or.id" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">Wikimedia Indonesia</a> (2022).
+            Termasuk salah satu dari
+            <a href="https://hashtags.wmcloud.org/all_users/?query=1lib1refid&project=id.wikipedia.org&startdate=2022-01-15&enddate=2022-02-05&search_type=or&user=" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">11 partisipan</a>.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <!-- Peringkat Keenam -->
-    <div class="w-full md:w-80 bg-white dark:bg-slate-900 shadow rounded overflow-hidden">
-      <img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat5.jpg"
-           alt="Peringkat Keenam"
-           class="w-full h-40 object-cover"/>
-      <div class="p-4">
-        <h4 class="text-xl font-bold dark:text-white mb-2">Peringkat Keenam</h4>
-        <p class="text-sm dark:text-gray-300">
-          Mendapatkan "Peringkat Keenam" dari 
-          <a href="https://meta.wikimedia.org/wiki/Kompetisi_Wikipabukon/Status" target="_blank" class="text-blue-500 dark:text-blue-400 underline">14 peserta</a> 
-          dalam perlombaan 
-          <a href="https://meta.wikimedia.org/wiki/Kompetisi_Wikipabukon" target="_blank" class="text-blue-500 dark:text-blue-400 underline">Wikipabukon</a> (2023), 
-          diselenggarakan oleh 
-          <a href="https://id.wikimedia.org/wiki/Komunitas_Wikisource_Indonesia" target="_blank" class="text-blue-500 dark:text-blue-400 underline">Komunitas Wikisource Indonesia</a>, 
-          <a href="https://id.wikimedia.org/wiki/Komunitas_Wikimedia_Bandung" target="_blank" class="text-blue-500 dark:text-blue-400 underline">Komunitas Wikimedia Bandung</a>, 
-          dan 
-          <a href="https://wikimedia.or.id" target="_blank" class="text-blue-500 dark:text-blue-400 underline">Wikimedia Indonesia</a>.
-        </p>
+      <!-- Peringkat Keenam -->
+      <div class="border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 rounded-xl overflow-hidden">
+        <img src="https://mnafisalmukhdi1.github.io/cdn/sertifikat5.jpg"
+             alt="Peringkat Keenam"
+             class="w-full h-40 object-cover" loading="lazy"/>
+        <div class="p-5">
+          <h4 class="font-semibold text-teal-900 dark:text-teal-300 mb-2">Peringkat Keenam</h4>
+          <p class="text-xs leading-relaxed text-gray-600 dark:text-gray-300">
+            Mendapatkan "Peringkat Keenam" dari
+            <a href="https://meta.wikimedia.org/wiki/Kompetisi_Wikipabukon/Status" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">14 peserta</a>
+            dalam perlombaan
+            <a href="https://meta.wikimedia.org/wiki/Kompetisi_Wikipabukon" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">Wikipabukon</a> (2023),
+            diselenggarakan oleh
+            <a href="https://id.wikimedia.org/wiki/Komunitas_Wikisource_Indonesia" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">Komunitas Wikisource Indonesia</a>,
+            <a href="https://id.wikimedia.org/wiki/Komunitas_Wikimedia_Bandung" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">Komunitas Wikimedia Bandung</a>,
+            dan
+            <a href="https://wikimedia.or.id" target="_blank" class="text-teal-700 dark:text-teal-400 underline underline-offset-2">Wikimedia Indonesia</a>.
+          </p>
+        </div>
       </div>
+
     </div>
-  </div>
-</section>
+  </section>
 </main>

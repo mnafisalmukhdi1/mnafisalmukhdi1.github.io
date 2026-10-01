@@ -1,13 +1,9 @@
-<nav id="nav2" class="text-center mb-4">
-    <a href="#" x-on:click="activeTab = 1" class="underline">Utama</a> &middot;
-    <a href="#" x-on:click="activeTab = 2" class="underline">Fediverse</a> &middot;
-    <a href="#" x-on:click="activeTab = 3" class="underline">Kepenulisan</a> &middot;
-    <a href="#" x-on:click="activeTab = 4" class="underline">Blog</a> &middot;
-    <a href="#" x-on:click="activeTab = 5" class="underline">Kontribusi</a> &middot;
-    <a href="#" x-on:click="activeTab = 6" class="underline">Video</a> &middot;
-    <a href="#" x-on:click="activeTab = 7" class="underline">Audio</a> &middot;
-    <a href="#" x-on:click="activeTab = 8" class="underline">Tanya</a> &middot;
-    <a href="#" x-on:click="activeTab = 9" class="underline">Perpesanan</a> &middot;
-    <a href="#" x-on:click="activeTab = 10" class="underline">Toko</a> &middot;
-    <a href="#" x-on:click="activeTab = 11" class="underline">Donasi</a>
+<nav id="nav2" x-cloak class="max-w-4xl mx-auto px-4 pb-8 flex flex-wrap justify-center gap-x-1 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+  {% assign labels = "Utama,Fediverse,Kepenulisan,Blog,Kontribusi,Video,Audio,Tanya,Perpesanan,Toko,Donasi" | split: "," %}
+  {% for label in labels %}
+  {% capture idx %}{{ forloop.index }}{% endcapture %}
+  <a href="#" x-on:click.prevent="activeTab = {{ idx }}"
+     :class="activeTab === {{ idx }} ? 'bg-teal-900 text-white dark:bg-teal-300 dark:text-slate-900 font-medium' : 'hover:bg-teal-50 hover:text-teal-800 dark:hover:bg-slate-800 dark:hover:text-teal-300'"
+     class="px-4 py-1.5 rounded-full transition">{{ label }}</a>
+  {% endfor %}
 </nav>
