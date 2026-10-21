@@ -16,13 +16,89 @@ title: Beli Buku
 <!-- Hero -->
 <section class="text-center max-w-2xl mx-auto px-4 pt-10 pb-8">
   <h1 class="text-2xl font-semibold tracking-tight text-teal-900 dark:text-teal-300">Toko</h1>
-  <p class="mt-2 text-gray-500 dark:text-gray-400">Tempat untuk membeli buku fisik atau ebook</p>
+  <p class="mt-2 text-gray-500 dark:text-gray-400">Pilih buku, paket Masjiduna, atau templat OPAC.</p>
 </section>
 
 <main class="max-w-5xl mx-auto px-4 pb-16">
+  {% assign all_works = site.works | sort: "title" %}
+  {% assign digital_products = all_works | where: "genre", "Produk Digital" %}
+  {% if digital_products.size > 0 %}
+  <section class="mb-14">
+    <div class="mb-6">
+      <h2 class="text-lg font-semibold text-teal-900 dark:text-teal-300">Produk Digital</h2>
+      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Pilih paket yang sesuai. Pesanan dan pembayaran dikonfirmasi melalui WhatsApp.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {% for work in digital_products %}
+      <article class="bg-white dark:bg-slate-900 rounded-xl border border-gray-100 dark:border-slate-800 overflow-hidden flex flex-col">
+        <div class="p-5 border-b border-gray-100 dark:border-slate-800 flex gap-4 items-start">
+          <span class="material-icons text-3xl text-emerald-700 dark:text-emerald-400">{{ work.brand_icon | default: "widgets" }}</span>
+          <div>
+            <span class="text-[10px] font-medium uppercase tracking-widest text-teal-700 dark:text-teal-400">{{ work.genre }}</span>
+            <h3 class="mt-1 text-base font-semibold text-teal-900 dark:text-teal-300">{{ work.title }}</h3>
+            <p class="mt-2 text-xs leading-relaxed text-gray-500 dark:text-gray-400">{{ work.synopsis }}</p>
+          </div>
+        </div>
+
+        <div class="p-5 grid gap-3 sm:grid-cols-2 flex-grow">
+          {% for package in work.packages %}
+            {% assign package_price = package.price | replace: 'Rp. ', '' | replace: 'Rp ', '' | replace: '$', '' | replace: '.', '' | replace: ',', '' | strip %}
+            {% assign package_slug = package.name | slugify %}
+            {% assign package_index = forloop.index0 %}
+            <div class="p-4 rounded-lg border {% if package.featured %}border-emerald-600 bg-emerald-50/60 dark:bg-emerald-900/10{% else %}border-gray-100 dark:border-slate-800 bg-gray-50/70 dark:bg-slate-800/40{% endif %} flex flex-col">
+              {% if package.label %}<span class="text-[10px] font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-400">{{ package.label }}</span>{% endif %}
+              <h4 class="mt-1 text-sm font-semibold text-teal-900 dark:text-teal-300">{{ package.name }}</h4>
+              <p class="mt-1 text-lg font-semibold text-teal-800 dark:text-teal-200">{{ package.price }}</p>
+              {% if package.billing %}<p class="mt-1 text-[10px] leading-relaxed text-gray-500 dark:text-gray-400">{{ package.billing }}</p>{% endif %}
+              {% if package.features %}
+              <ul class="mt-3 space-y-1.5 text-[11px] text-gray-600 dark:text-gray-300">
+                {% for feature in package.features %}<li class="flex gap-1.5"><span class="material-icons text-emerald-700 dark:text-emerald-400 text-xs">check</span><span>{{ feature }}</span></li>{% endfor %}
+              </ul>
+              {% endif %}
+              {% if work.comparison_rows %}
+              <ul class="mt-3 space-y-1.5 text-[11px] text-gray-600 dark:text-gray-300">
+                {% for row in work.comparison_rows %}<li><span class="font-medium text-gray-700 dark:text-gray-200">{{ row.feature }}:</span> {{ row.values[package_index] }}</li>{% endfor %}
+              </ul>
+              {% endif %}
+              <button data-slug="{{ work.title | slugify }}-{{ package_slug }}" onclick="addToCart('{{ work.title | slugify }}-{{ package_slug }}', '{{ work.title }} ({{ package.name }})', parsePrice('{{ package_price }}'))"
+                      aria-label="Pilih {{ package.name }} untuk {{ work.title }}"
+                      class="mt-auto pt-4">
+                <span class="w-full bg-teal-900 hover:bg-teal-700 text-white px-3 py-2 rounded-lg flex items-center justify-center gap-1.5 text-xs font-medium transition"><span class="material-icons text-sm">add_shopping_cart</span>Pilih paket</span>
+              </button>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if work.addons %}
+        <div class="px-5 pb-5">
+          <h4 class="text-xs font-semibold text-teal-900 dark:text-teal-300 mb-2">Add-on</h4>
+          <div class="space-y-2">
+            {% for addon in work.addons %}
+              {% assign addon_price = addon.price | replace: 'Rp. ', '' | replace: 'Rp ', '' | replace: '+', '' | replace: '$', '' | replace: '.', '' | replace: ',', '' | strip %}
+              {% assign addon_slug = addon.name | slugify %}
+              <div class="flex justify-between items-center gap-3 py-2 px-3 rounded-lg bg-gray-50 dark:bg-slate-800/60">
+                <div><p class="text-xs font-medium text-gray-700 dark:text-gray-200">{{ addon.name }}</p><p class="text-[10px] text-gray-500 dark:text-gray-400">{{ addon.price }}</p></div>
+                <button data-slug="{{ work.title | slugify }}-{{ addon_slug }}" onclick="addToCart('{{ work.title | slugify }}-{{ addon_slug }}', '{{ work.title }} - {{ addon.name }}', parsePrice('{{ addon_price }}'))"
+                        aria-label="Tambah {{ addon.name }} untuk {{ work.title }}"
+                        class="bg-emerald-700 hover:bg-emerald-600 text-white p-2 rounded-lg flex items-center transition"><span class="material-icons text-sm">add_shopping_cart</span></button>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section>
+    <div class="mb-6">
+      <h2 class="text-lg font-semibold text-teal-900 dark:text-teal-300">Buku</h2>
+      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Buku cetak dan e-book.</p>
+    </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    {% assign all_works = site.works | sort: "title" %}
     {% for work in all_works %}
       {% comment %}
          Cek: Harus ada harga (Fisik ATAU Ebook)
@@ -59,7 +135,7 @@ title: Beli Buku
                 <div class="flex items-center gap-3">
                   <span class="text-sm font-semibold text-teal-800 dark:text-teal-300">{{ work.price_physical }}</span>
                   {% assign p_price = work.price_physical | replace: 'Rp. ', '' | replace: 'Rp ', '' | replace: '$', '' | replace: '.', '' | replace: ',', '' | strip %}
-                  <button data-slug="{{ work.title | slugify }}-cetak" onclick="addToCart('{{ work.title | slugify }}-cetak', '{{ work.title }} (Cetak)', parsePrice('{{ p_price }}'))"
+                  <button data-slug="{{ work.title | slugify }}-cetak" onclick="addToCart('{{ work.title | slugify }}-cetak', '{{ work.title }} (Cetak)', parsePrice('{{ p_price }}'), 'physical')"
                           aria-label="Tambah {{ work.title }} cetak ke keranjang"
                           class="bg-teal-900 hover:bg-teal-700 text-white p-1.5 rounded-lg flex items-center transition">
                     <span class="material-icons text-sm">auto_stories</span>
@@ -91,6 +167,7 @@ title: Beli Buku
     {% endfor %}
 
   </div>
+  </section>
 </main>
 
 <!-- Cart drawer -->
@@ -104,31 +181,34 @@ title: Beli Buku
     </div>
 
     <div id="cart-items" class="space-y-3 mb-8">
-      <p class="text-center text-gray-400 italic">Belum ada buku terpilih.</p>
+      <p class="text-center text-gray-400 italic">Belum ada produk terpilih.</p>
     </div>
 
     <div id="checkout-section" class="hidden border-t border-gray-100 dark:border-slate-800 pt-6">
       <form id="order-form" class="space-y-4">
-        <h3 class="font-semibold text-teal-900 dark:text-teal-300">Data Pengiriman</h3>
+        <h3 class="font-semibold text-teal-900 dark:text-teal-300">Data Pemesan</h3>
 
         <input type="text" id="cust-name" placeholder="Nama Lengkap" class="w-full p-3 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-lg text-sm outline-none focus:ring-2 focus:ring-teal-500" required>
 
         <input type="text" id="contact-value" placeholder="Nomor WhatsApp Anda (08xxx)" class="w-full p-3 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-lg text-sm outline-none focus:ring-2 focus:ring-teal-500" required>
 
-        <textarea id="cust-address" placeholder="Alamat Lengkap (Kecamatan & Kota wajib isi)" class="w-full p-3 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-lg text-sm outline-none focus:ring-2 focus:ring-teal-500" rows="3" required></textarea>
+        <div id="shipping-address-field" class="hidden">
+          <label for="cust-address" class="block mb-1.5 text-xs font-medium text-gray-600 dark:text-gray-300">Alamat pengiriman buku cetak</label>
+          <textarea id="cust-address" placeholder="Alamat lengkap (kecamatan & kota)" class="w-full p-3 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 rounded-lg text-sm outline-none focus:ring-2 focus:ring-teal-500" rows="3"></textarea>
+        </div>
 
         <div class="p-4 bg-teal-50/70 dark:bg-teal-900/20 rounded-xl space-y-3">
           <div class="flex gap-2">
             <span class="material-icons text-teal-600 text-sm">info</span>
             <p class="text-[11px] text-teal-800 dark:text-teal-300 italic">
-              Koordinasi selanjutnya mengenai pembayaran dan pengiriman akan dilakukan melalui obrolan WhatsApp ini.
+              Detail pembayaran dan akses produk digital atau pengiriman buku akan dikonfirmasi melalui WhatsApp.
             </p>
           </div>
           <hr class="border-teal-100 dark:border-teal-800/50">
           <div class="flex gap-2">
             <span class="material-icons text-amber-600 text-sm">privacy_tip</span>
             <p class="text-[11px] text-amber-800 dark:text-amber-400">
-              <b>Peringatan:</b> Harap menjaga privasi dengan tidak menyebarluaskan nomor pribadi penulis yang tertera nanti.
+              <b>Catatan:</b> Nomor WhatsApp digunakan untuk koordinasi pesanan dan tidak untuk disebarluaskan.
             </p>
           </div>
         </div>
@@ -163,12 +243,12 @@ title: Beli Buku
     modal.classList.toggle('hidden');
   }
 
-  function addToCart(id, title, price) {
+  function addToCart(id, title, price, type = 'digital') {
     const existing = cart.find(item => item.id === id);
     if (existing) {
       existing.qty++;
     } else {
-      cart.push({ id, title, price, qty: 1 });
+      cart.push({ id, title, price, qty: 1, type });
     }
     updateCartUI();
     if(document.getElementById('cart-modal').classList.contains('hidden')) toggleCart();
@@ -188,6 +268,12 @@ title: Beli Buku
     const count = document.getElementById('cart-count');
     const totalDisplay = document.getElementById('cart-total');
     const checkoutSec = document.getElementById('checkout-section');
+    const shippingAddressField = document.getElementById('shipping-address-field');
+    const addressInput = document.getElementById('cust-address');
+    const hasPhysicalItem = cart.some(item => item.type === 'physical');
+
+    shippingAddressField.classList.toggle('hidden', !hasPhysicalItem);
+    addressInput.required = hasPhysicalItem;
 
     list.innerHTML = '';
     let total = 0;
@@ -219,7 +305,7 @@ title: Beli Buku
       checkoutSec.classList.remove('hidden');
     } else {
       checkoutSec.classList.add('hidden');
-      list.innerHTML = '<p class="text-center text-gray-400 py-10 italic">Belum ada buku terpilih.</p>';
+      list.innerHTML = '<p class="text-center text-gray-400 py-10 italic">Belum ada produk terpilih.</p>';
     }
   }
 
@@ -244,7 +330,7 @@ title: Beli Buku
     e.preventDefault();
 
     const confirmPrivacy = confirm(
-      "Anda akan terhubung ke WhatsApp pribadi penulis untuk koordinasi pesanan.\n\nMohon jaga etika dan privasi nomor tersebut.\n\nLanjutkan?"
+      "Anda akan terhubung ke WhatsApp untuk koordinasi pesanan. Lanjutkan?"
     );
 
     if (!confirmPrivacy) return;
@@ -252,10 +338,10 @@ title: Beli Buku
     const inv = 'INV-' + Date.now().toString().slice(-5);
     const name = document.getElementById('cust-name').value;
     const contact = document.getElementById('contact-value').value;
-    const address = document.getElementById('cust-address').value;
+    const address = document.getElementById('cust-address').value || 'Tidak diperlukan untuk produk digital';
     const total = document.getElementById('cart-total').innerText;
 
-    let details = cart.map(i => `- ${i.title} (${i.qty} eks)`).join('\n');
+    let details = cart.map(i => `- ${i.title} (jumlah: ${i.qty})`).join('\n');
 
     const message = `*KONFIRMASI PESANAN [${inv}]*\n\nNama: ${name}\nWA Pembeli: ${contact}\nAlamat: ${address}\n\n*PESANAN:*\n${details}\n\n*TOTAL:* ${total}\n\n(Mohon info lanjut untuk pembayaran & pengiriman)`;
 
