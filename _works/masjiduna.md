@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Masjiduna"
+cover: "https://nafis1.my.id/cdn/works/masjiduna.png"
 brand: "Masjiduna.web.id"
 brand_icon: "mosque"
 genre: "Produk Digital"
