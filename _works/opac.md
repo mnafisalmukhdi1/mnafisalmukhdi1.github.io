@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Templat Web Katalog Perpustakaan (OPAC)"
+cover: "https://nafis1.my.id/cdn/works/opac.png"
 brand: "Templat OPAC"
 brand_icon: "local_library"
 genre: "Produk Digital"
